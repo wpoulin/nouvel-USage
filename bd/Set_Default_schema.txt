@@ -1,0 +1,9 @@
+-- Create another schema
+CREATE SCHEMA NouvelUsage;
+GRANT ALL ON SCHEMA NouvelUsage TO postgres;
+
+-- To change search_path on a connection-level
+SET search_path TO NouvelUsage;
+
+-- To change search_path on a database-level
+ALTER database "ProjetLocal" SET search_path TO NouvelUsage;
