@@ -517,7 +517,7 @@
     </socket-binding-group>
     <deployments>
         <deployment name="rest-mybatis.war" runtime-name="rest-mybatis.war">
-            <fs-exploded path="/Users/bernard/Downloads/rest-mybatis/build/libs/exploded/rest-mybatis.war"/>
+            <fs-exploded path="E:\Utilisateurs\Bryan\rest-mybatis\build\libs\exploded\rest-mybatis.war"/>
         </deployment>
     </deployments>
 </server>

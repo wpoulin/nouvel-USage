@@ -515,12 +515,4 @@
             <remote-destination host="localhost" port="25"/>
         </outbound-socket-binding>
     </socket-binding-group>
-    <deployments>
-        <deployment name="rest-mybatis.war" runtime-name="rest-mybatis.war">
-            <fs-exploded path="E:\Utilisateurs\Bryan\rest-mybatis\build\libs\exploded\rest-mybatis.war"/>
-        </deployment>
-        <deployment name="backend.war" runtime-name="backend.war" enabled="false">
-            <fs-exploded path="E:\Utilisateurs\Bryan\nouvel-USage\backend\build\libs\exploded\backend.war"/>
-        </deployment>
-    </deployments>
 </server>

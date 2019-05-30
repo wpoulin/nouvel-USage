@@ -1552,3 +1552,72 @@ Caused by: java.net.SocketTimeoutException: connect timed out
 2019-05-30 11:50:04,032 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) WFLYUT0007: Undertow HTTPS listener https stopped, was bound to 127.0.0.1:8443
 2019-05-30 11:50:04,032 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0007: Undertow HTTP listener default stopped, was bound to 127.0.0.1:8080
 2019-05-30 11:50:04,034 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) WFLYUT0004: Undertow 2.0.19.Final stopping
+2019-05-30 13:01:53,430 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0006: Undertow HTTP listener default listening on 127.0.0.1:8080
+2019-05-30 13:01:53,439 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-6) WFLYDS0013: Started FileSystemDeploymentService for directory E:\Utilisateurs\Bryan\nouvel-USage\backend\wildfly-16.0.0.Final\standalone\deployments
+2019-05-30 13:01:53,480 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0006: Undertow HTTPS listener https listening on 127.0.0.1:8443
+2019-05-30 13:01:53,497 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) WFLYSRV0027: Starting deployment of "rest-mybatis.war" (runtime-name: "rest-mybatis.war")
+2019-05-30 13:01:53,597 INFO  [org.jboss.as.ejb3] (MSC service thread 1-5) WFLYEJB0493: EJB subsystem suspension complete
+2019-05-30 13:01:53,713 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-7) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleDS]
+2019-05-30 13:01:53,738 INFO  [org.jboss.ws.common.management] (MSC service thread 1-4) JBWS022052: Starting JBossWS 5.2.4.Final (Apache CXF 3.2.7) 
+2019-05-30 13:01:55,913 INFO  [org.jboss.weld.deployer] (MSC service thread 1-6) WFLYWELD0003: Processing weld deployment rest-mybatis.war
+2019-05-30 13:01:56,051 INFO  [org.hibernate.validator.internal.util.Version] (MSC service thread 1-6) HV000001: Hibernate Validator 6.0.15.Final
+2019-05-30 13:01:56,487 WARN  [org.jboss.as.jaxrs] (MSC service thread 1-1) WFLYRS0018: Explicit usage of Jackson annotation in a JAX-RS deployment; the system will disable JSON-B processing for the current deployment. Consider setting the 'resteasy.preferJacksonOverJsonB' property to 'false' to restore JSON-B.
+2019-05-30 13:01:56,497 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) WFLYJCA0005: Deploying non-JDBC-compliant driver class org.postgresql.Driver (version 42.2)
+2019-05-30 13:01:56,562 INFO  [org.jboss.weld.Version] (MSC service thread 1-1) WELD-000900: 3.1.0 (Final)
+2019-05-30 13:01:56,650 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) WFLYJCA0018: Started Driver service with driver-name = rest-mybatis.war_org.postgresql.Driver_42_2
+2019-05-30 13:01:56,725 INFO  [org.infinispan.factories.GlobalComponentRegistry] (MSC service thread 1-3) ISPN000128: Infinispan version: Infinispan 'Infinity Minus ONE +2' 9.4.8.Final
+2019-05-30 13:01:56,879 INFO  [org.jboss.weld.Event] (MSC service thread 1-5) WELD-000411: Observer method [BackedAnnotatedMethod] protected org.mybatis.cdi.MybatisExtension.processAnnotatedType(@Observes ProcessAnnotatedType<T>) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.
+2019-05-30 13:01:56,987 INFO  [io.smallrye.metrics] (MSC service thread 1-5) MicroProfile: Metrics activated
+2019-05-30 13:01:57,073 INFO  [org.mybatis.cdi.MybatisExtension] (MSC service thread 1-5) MyBatis CDI Module - Found class with @Mapper-annotation: EtudiantMapper
+2019-05-30 13:01:57,279 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 74) WFLYCLINF0002: Started client-mappings cache from ejb container
+2019-05-30 13:01:57,334 INFO  [org.mybatis.cdi.MybatisExtension] (MSC service thread 1-5) MyBatis CDI Module - SqlSessionFactory producer MyBatisSqlSessionFactoryProducer.produceFactory
+2019-05-30 13:01:57,405 INFO  [org.mybatis.cdi.MybatisExtension] (MSC service thread 1-5) MyBatis CDI Module - Activated
+2019-05-30 13:01:57,405 INFO  [org.mybatis.cdi.MybatisExtension] (MSC service thread 1-5) MyBatis CDI Module - Found a bean, which needs a Mapper interface ca.usherbrooke.gegi.server.persistence.EtudiantMapper
+2019-05-30 13:01:57,405 INFO  [org.mybatis.cdi.MybatisExtension] (MSC service thread 1-5) MyBatis CDI Module - Managed Mapper dependency: ca.usherbrooke.gegi.server.persistence.EtudiantMapper, ca.usherbrooke.gegi.server.persistence.EtudiantMapper
+2019-05-30 13:01:57,406 INFO  [org.mybatis.cdi.MybatisExtension] (MSC service thread 1-5) MyBatis CDI Module - Managed SqlSession: org.apache.ibatis.session.SqlSession, org.apache.ibatis.session.SqlSession
+2019-05-30 13:01:58,386 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 74) RESTEASY002225: Deploying javax.ws.rs.core.Application: class ca.usherbrooke.gegi.server.injection.RestApplicationPathConfig
+2019-05-30 13:01:58,440 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 74) WFLYUT0021: Registered web context: '/rest-mybatis' for server 'default-server'
+2019-05-30 13:01:58,545 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0010: Deployed "rest-mybatis.war" (runtime-name : "rest-mybatis.war")
+2019-05-30 13:01:58,647 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0212: Resuming server
+2019-05-30 13:01:58,650 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://127.0.0.1:9990/management
+2019-05-30 13:01:58,650 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://127.0.0.1:9990
+2019-05-30 13:01:58,650 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0025: WildFly Full 16.0.0.Final (WildFly Core 8.0.0.Final) started in 9650ms - Started 444 of 632 services (329 services are lazy, passive or on-demand)
+2019-05-30 13:01:59,048 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0027: Starting deployment of "backend.war" (runtime-name: "backend.war")
+2019-05-30 13:02:01,683 INFO  [org.jboss.weld.deployer] (MSC service thread 1-5) WFLYWELD0003: Processing weld deployment backend.war
+2019-05-30 13:02:01,736 WARN  [org.jboss.as.jaxrs] (MSC service thread 1-1) WFLYRS0018: Explicit usage of Jackson annotation in a JAX-RS deployment; the system will disable JSON-B processing for the current deployment. Consider setting the 'resteasy.preferJacksonOverJsonB' property to 'false' to restore JSON-B.
+2019-05-30 13:02:01,741 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) WFLYJCA0005: Deploying non-JDBC-compliant driver class org.postgresql.Driver (version 42.2)
+2019-05-30 13:02:01,762 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) WFLYJCA0018: Started Driver service with driver-name = backend.war_org.postgresql.Driver_42_2
+2019-05-30 13:02:01,803 INFO  [org.jboss.weld.Event] (MSC service thread 1-8) WELD-000411: Observer method [BackedAnnotatedMethod] protected org.mybatis.cdi.MybatisExtension.processAnnotatedType(@Observes ProcessAnnotatedType<T>) receives events for all annotated types. Consider restricting events using @WithAnnotations or a generic type with bounds.
+2019-05-30 13:02:01,859 INFO  [io.smallrye.metrics] (MSC service thread 1-8) MicroProfile: Metrics activated
+2019-05-30 13:02:01,898 INFO  [org.mybatis.cdi.MybatisExtension] (MSC service thread 1-8) MyBatis CDI Module - Found class with @Mapper-annotation: EtudiantMapper
+2019-05-30 13:02:02,142 INFO  [org.mybatis.cdi.MybatisExtension] (MSC service thread 1-8) MyBatis CDI Module - SqlSessionFactory producer MyBatisSqlSessionFactoryProducer.produceFactory
+2019-05-30 13:02:02,170 INFO  [org.mybatis.cdi.MybatisExtension] (MSC service thread 1-8) MyBatis CDI Module - Activated
+2019-05-30 13:02:02,170 INFO  [org.mybatis.cdi.MybatisExtension] (MSC service thread 1-8) MyBatis CDI Module - Found a bean, which needs a Mapper interface ca.usherbrooke.gegi.server.persistence.EtudiantMapper
+2019-05-30 13:02:02,170 INFO  [org.mybatis.cdi.MybatisExtension] (MSC service thread 1-8) MyBatis CDI Module - Managed Mapper dependency: ca.usherbrooke.gegi.server.persistence.EtudiantMapper, ca.usherbrooke.gegi.server.persistence.EtudiantMapper
+2019-05-30 13:02:02,171 INFO  [org.mybatis.cdi.MybatisExtension] (MSC service thread 1-8) MyBatis CDI Module - Managed SqlSession: org.apache.ibatis.session.SqlSession, org.apache.ibatis.session.SqlSession
+2019-05-30 13:02:02,424 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 19) RESTEASY002225: Deploying javax.ws.rs.core.Application: class ca.usherbrooke.gegi.server.injection.RestApplicationPathConfig
+2019-05-30 13:02:02,429 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 19) WFLYUT0021: Registered web context: '/backend' for server 'default-server'
+2019-05-30 13:02:02,645 INFO  [org.jboss.as.server] (management-handler-thread - 2) WFLYSRV0010: Deployed "backend.war" (runtime-name : "backend.war")
+2019-05-30 13:02:02,758 INFO  [org.jasig.cas.client.configuration.WebXmlConfigurationStrategyImpl] (default task-1) Property [serverName] loaded from FilterConfig.getInitParameter with value [http://localhost:8080]
+2019-05-30 13:02:02,760 INFO  [org.jasig.cas.client.configuration.WebXmlConfigurationStrategyImpl] (default task-1) Property [casServerLoginUrl] loaded from FilterConfig.getInitParameter with value [https://cas.usherbrooke.ca/login]
+2019-05-30 13:02:02,763 INFO  [org.jasig.cas.client.configuration.WebXmlConfigurationStrategyImpl] (default task-1) Property [serverName] loaded from FilterConfig.getInitParameter with value [http://localhost:8080]
+2019-05-30 13:02:02,766 INFO  [org.jasig.cas.client.configuration.WebXmlConfigurationStrategyImpl] (default task-1) Property [casServerUrlPrefix] loaded from FilterConfig.getInitParameter with value [https://cas.usherbrooke.ca]
+2019-05-30 13:02:16,557 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-5) WFLYJCA0019: Stopped Driver service with driver-name = backend.war_org.postgresql.Driver_42_2
+2019-05-30 13:02:16,559 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 19) WFLYUT0022: Unregistered web context: '/backend' from server 'default-server'
+2019-05-30 13:02:16,628 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0028: Stopped deployment backend.war (runtime-name: backend.war) in 74ms
+2019-05-30 13:02:16,666 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0009: Undeployed "backend.war" (runtime-name: "backend.war")
+2019-05-30 13:02:16,805 INFO  [org.jboss.as.server] (management-handler-thread - 2) WFLYSRV0272: Suspending server
+2019-05-30 13:02:16,814 INFO  [org.jboss.as.ejb3] (management-handler-thread - 2) WFLYEJB0493: EJB subsystem suspension complete
+2019-05-30 13:02:16,820 INFO  [org.jboss.as.server] (Management Triggered Shutdown) WFLYSRV0241: Shutting down in response to management operation 'shutdown'
+2019-05-30 13:02:16,851 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-6) WFLYJCA0019: Stopped Driver service with driver-name = rest-mybatis.war_org.postgresql.Driver_42_2
+2019-05-30 13:02:16,860 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-3) WFLYMAIL0002: Unbound mail session [java:jboss/mail/Default]
+2019-05-30 13:02:16,864 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 19) WFLYUT0022: Unregistered web context: '/rest-mybatis' from server 'default-server'
+2019-05-30 13:02:16,957 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 30) WFLYCLINF0003: Stopped client-mappings cache from ejb container
+2019-05-30 13:02:17,004 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0019: Host default-host stopping
+2019-05-30 13:02:17,009 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-5) WFLYJCA0010: Unbound data source [java:jboss/datasources/ExampleDS]
+2019-05-30 13:02:17,050 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-7) WFLYJCA0019: Stopped Driver service with driver-name = h2
+2019-05-30 13:02:17,062 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0008: Undertow HTTPS listener https suspending
+2019-05-30 13:02:17,064 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0007: Undertow HTTPS listener https stopped, was bound to 127.0.0.1:8443
+2019-05-30 13:02:17,065 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0008: Undertow HTTP listener default suspending
+2019-05-30 13:02:17,069 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0007: Undertow HTTP listener default stopped, was bound to 127.0.0.1:8080
+2019-05-30 13:02:17,078 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0004: Undertow 2.0.19.Final stopping
