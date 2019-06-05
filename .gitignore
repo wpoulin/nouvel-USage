@@ -12,3 +12,4 @@ backend/.gradle
 backend/.idea
 backend/wildfly-16.0.0.Final
 *.xml
+backend/build
