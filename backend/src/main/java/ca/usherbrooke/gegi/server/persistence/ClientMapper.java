@@ -1,6 +1,6 @@
 package ca.usherbrooke.gegi.server.persistence;
 
-import ca.usherbrooke.gegi.server.business.User;
+import ca.usherbrooke.gegi.server.business.Client;
 import org.apache.ibatis.annotations.Param;
 import org.mybatis.cdi.Mapper;
 
@@ -8,7 +8,7 @@ import java.util.List;
 
 @SuppressWarnings("CdiManagedBeanInconsistencyInspection")
 @Mapper
-public interface UserMapper {
+public interface ClientMapper {
 
-    List<User> select(@Param("id") Integer id);
+    List<Client> select(@Param("id") Integer id);
 }

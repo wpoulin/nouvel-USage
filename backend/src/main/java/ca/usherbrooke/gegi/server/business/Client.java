@@ -1,6 +1,6 @@
 package ca.usherbrooke.gegi.server.business;
 
-public class User {
+public class Client {
     private Integer id_user;
     private String first_name;
     private String last_name;

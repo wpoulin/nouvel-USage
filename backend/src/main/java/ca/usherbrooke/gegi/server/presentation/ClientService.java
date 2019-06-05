@@ -1,7 +1,7 @@
 package ca.usherbrooke.gegi.server.presentation;
 
-import ca.usherbrooke.gegi.server.business.User;
-import ca.usherbrooke.gegi.server.persistence.UserMapper;
+import ca.usherbrooke.gegi.server.business.Client;
+import ca.usherbrooke.gegi.server.persistence.ClientMapper;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
@@ -13,19 +13,19 @@ import javax.ws.rs.core.Context;
 import java.util.List;
 
 @Path("user")
-public class UserService {
+public class ClientService {
 
     @Context
     HttpServletRequest httpServletRequest;
 
-    @Inject private UserMapper userMapper;
+    @Inject private ClientMapper clientMapper;
 
     @GET
     @Produces("application/json")
-    public List<User> getSale(@QueryParam("id") Integer id) {
+    public List<Client> getSale(@QueryParam("id") Integer id) {
 
         System.out.println(httpServletRequest.getUserPrincipal().getName());
-        List<User> users = userMapper.select(id);
-        return users;
+        List<Client> clients = clientMapper.select(id);
+        return clients;
     }
 }
