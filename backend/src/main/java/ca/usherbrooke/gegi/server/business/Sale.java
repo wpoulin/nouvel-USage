@@ -1,7 +1,5 @@
 package ca.usherbrooke.gegi.server.business;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
-
 import java.time.format.DateTimeFormatter;
 
 public class Sale {
