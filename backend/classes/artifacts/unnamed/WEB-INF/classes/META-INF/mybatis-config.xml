@@ -9,9 +9,9 @@
       <transactionManager type="JDBC"/>
       <dataSource type="POOLED">
         <property name="driver" value="org.postgresql.Driver"/>
-        <property name="url" value="jdbc:postgresql://zeus.gel.usherbrooke.ca/s6infoe01"/>
-        <property name="username" value="s6infoe01"/>
-        <property name="password" value="s6info"/>
+        <property name="url" value="jdbc:postgresql://zeus.gel.usherbrooke.ca/s3infoe00"/>
+        <property name="username" value="s3infoe00"/>
+        <property name="password" value="s3info"/>
       </dataSource>
     </environment>
   </environments>
