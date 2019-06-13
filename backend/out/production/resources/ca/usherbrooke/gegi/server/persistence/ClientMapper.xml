@@ -6,7 +6,7 @@
 
     <select id="select" resultType="Client">
       SELECT
-        id_user,
+        id_client,
         first_name,
         last_name,
         username,
@@ -19,7 +19,7 @@
       FROM
         nouvelusage.client
       where
-        id_user = #{id};
+        id_client = #{id};
 
     </select>
 </mapper>

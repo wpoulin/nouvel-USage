@@ -1,7 +1,7 @@
 package ca.usherbrooke.gegi.server.business;
 
 public class Client {
-    private Integer id_user;
+    private Integer id_client;
     private String first_name;
     private String last_name;
     private String username;
@@ -12,11 +12,11 @@ public class Client {
     private String ville;
     private Integer cote_seller;
 
-    public Integer getIdUser() {
-        return id_user;
+    public Integer getIdClient() {
+        return id_client;
     }
-    public void setIdUser(Integer p_idUser) {
-        this.id_user = p_idUser;
+    public void setIdClient(Integer p_idClient) {
+        this.id_client = p_idClient;
     }
 
     public String getFirstName() {
@@ -69,7 +69,7 @@ public class Client {
     @Override
     public String toString() {
         return "User{" +
-                "id_user=" + id_user +
+                "id_client=" + id_client +
                 ", first_name='" + first_name + '\'' +
                 ", last_name='" + last_name + '\'' +
                 ", username='" + username + '\'' +
