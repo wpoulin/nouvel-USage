@@ -1,35 +1,26 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React, { Component } from "react";
+import "../assets/header.css";
 
-const Header = props => {
-  const navClass = `nav-extended ${props.color}`;
-  const divClass = `nav-wrapper ${props.color} center-align`;
-  let h3Class;
-  const arr = props.textColor.split(" ");
-  if (arr.length === 1) {
-    h3Class = `${arr[0]}-text`;
-  } else {
-    h3Class = `${arr[0]}-text ${arr[1]}-text`;
+class Header extends Component {
+  render() {
+    return (
+      <nav>
+        <div>
+          <ul>
+            <li>
+              <a href="#home">nouvel USage</a>
+            </li>
+            <li>
+              <a>
+                <i className="material-icons">account_circle</i>
+              </a>
+            </li>
+          </ul>
+          <span />
+        </div>
+      </nav>
+    );
   }
-  return (
-    <nav className={navClass}>
-      <div className={divClass}>
-        <h3 className={h3Class}>{props.text}</h3>
-      </div>
-    </nav>
-  );
-};
-
-Header.defaultProps = {
-  text: "Header text",
-  color: "purple darken-4",
-  textColor: "white"
-};
-
-Header.propTypes = {
-  text: PropTypes.string,
-  color: PropTypes.string,
-  textColor: PropTypes.string
-};
+}
 
 export default Header;
