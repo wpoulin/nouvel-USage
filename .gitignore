@@ -13,3 +13,4 @@ backend/.idea
 backend/wildfly-16.0.0.Final
 backend/build
 backend/classes
+backend/out

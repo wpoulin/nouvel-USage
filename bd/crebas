@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      PostgreSQL 8                                 */
-/* Created on:     5/28/2019 9:44:10 AM                         */
+/* Created on:     2019-06-13 09:56:59                          */
 /*==============================================================*/
 
 
@@ -9,36 +9,25 @@
 /*==============================================================*/
 create table CATEGORYSALE (
    ID_CATEGORY          SERIAL               not null,
-   CATEGORY_NAME        CHAR(50)             null,
+   CATEGORY_NAME        VARCHAR(50)          null,
    constraint PK_CATEGORYSALE primary key (ID_CATEGORY)
 );
 
 /*==============================================================*/
-/* Table: DEPARTEMENT                                           */
+/* Table: CLIENT                                                */
 /*==============================================================*/
-create table DEPARTEMENT (
-   ID_DEPARTMENT        SERIAL               not null,
-   ID_FACULTE           INT4                 not null,
-   DEPARTMENT_NAME      VARCHAR(100)         null,
-   constraint PK_DEPARTEMENT primary key (ID_DEPARTMENT)
-);
-
-/*==============================================================*/
-/* Table: FACULTE                                               */
-/*==============================================================*/
-create table FACULTE (
-   ID_FACULTE           SERIAL               not null,
-   FACULTE_NAME         VARCHAR(100)         null,
-   constraint PK_FACULTE primary key (ID_FACULTE)
-);
-
-/*==============================================================*/
-/* Table: IS_IN                                                 */
-/*==============================================================*/
-create table IS_IN (
-   ID_USER              INT4                 not null,
-   ID_DEPARTMENT        INT4                 not null,
-   constraint PK_IS_IN primary key (ID_USER, ID_DEPARTMENT)
+create table CLIENT (
+   ID_CLIENT            SERIAL               not null,
+   FIRST_NAME           VARCHAR(50)          null,
+   LAST_NAME            VARCHAR(50)          null,
+   USERNAME             VARCHAR(50)          null,
+   PASSWORD             VARCHAR(50)          null,
+   EMAIL                VARCHAR(50)          null,
+   PHONE                VARCHAR(50)          null,
+   CELL_PHONE           VARCHAR(50)          null,
+   VILLE                VARCHAR(50)          null,
+   COTE_SELLER          INT4                 null,
+   constraint PK_CLIENT primary key (ID_CLIENT)
 );
 
 /*==============================================================*/
@@ -46,19 +35,10 @@ create table IS_IN (
 /*==============================================================*/
 create table LOG (
    ID_LOG               SERIAL               not null,
-   ID_USER              INT4                 not null,
+   ID_CLIENT            INT4                 not null,
    EVENT_DESCRIPTION    VARCHAR(200)         null,
    LOG_TIME             DATE                 null,
    constraint PK_LOG primary key (ID_LOG)
-);
-
-/*==============================================================*/
-/* Table: PAYS                                                  */
-/*==============================================================*/
-create table PAYS (
-   ID_PAYS              SERIAL               not null,
-   PAYS_NAME            CHAR(50)             null,
-   constraint PK_PAYS primary key (ID_PAYS)
 );
 
 /*==============================================================*/
@@ -67,34 +47,25 @@ create table PAYS (
 create table SALE (
    ID_SALE              SERIAL               not null,
    ID_CATEGORY          INT4                 not null,
-   ID_USER              INT4                 not null,
+   ID_CLIENT            INT4                 not null,
    ID_STATUSSALE        INT4                 not null,
-   SALE_TITLE           CHAR(50)             null,
+   SALE_TITLE           VARCHAR(50)          null,
    SALE_DESCRIPTION     VARCHAR(1000)        null,
    SALE_DATE            DATE                 null,
-   SALE_PRICE           MONEY                null,
+   SALE_PRICE           FLOAT8               null,
    SALE_WEAR            INT4                 null,
    SALE_NEGO            BOOL                 null,
-   SALE_LOCATION        CHAR(50)             null,
+   SALE_LOCATION        VARCHAR(50)          null,
    constraint PK_SALE primary key (ID_SALE)
 );
 
 /*==============================================================*/
-/* Table: SALEBYDEPARTMENT                                      */
+/* Table: SALEBYTAG                                             */
 /*==============================================================*/
-create table SALEBYDEPARTMENT (
-   ID_DEPARTMENT        INT4                 not null,
+create table SALEBYTAG (
+   ID_TAG               INT4                 not null,
    ID_SALE              INT4                 not null,
-   constraint PK_SALEBYDEPARTMENT primary key (ID_DEPARTMENT, ID_SALE)
-);
-
-/*==============================================================*/
-/* Table: SALEBYSESSION                                         */
-/*==============================================================*/
-create table SALEBYSESSION (
-   ID_SESSION           INT4                 not null,
-   ID_SALE              INT4                 not null,
-   constraint PK_SALEBYSESSION primary key (ID_SESSION, ID_SALE)
+   constraint PK_SALEBYTAG primary key (ID_TAG, ID_SALE)
 );
 
 /*==============================================================*/
@@ -112,17 +83,8 @@ create table SALEPICTURE (
 /*==============================================================*/
 create table SALESTATUS (
    ID_STATUSSALE        SERIAL               not null,
-   STATUSSALE_NAME      CHAR(50)             null,
+   STATUSSALE_NAME      VARCHAR(50)          null,
    constraint PK_SALESTATUS primary key (ID_STATUSSALE)
-);
-
-/*==============================================================*/
-/* Table: SESSION                                               */
-/*==============================================================*/
-create table SESSION (
-   ID_SESSION           SERIAL               not null,
-   SESSION_NAME         CHAR(50)             null,
-   constraint PK_SESSION primary key (ID_SESSION)
 );
 
 /*==============================================================*/
@@ -130,35 +92,17 @@ create table SESSION (
 /*==============================================================*/
 create table STATUSBYUSER (
    ID_STATUS            INT4                 not null,
-   ID_USER              INT4                 not null,
-   constraint PK_STATUSBYUSER primary key (ID_STATUS, ID_USER)
+   ID_CLIENT            INT4                 not null,
+   constraint PK_STATUSBYUSER primary key (ID_STATUS, ID_CLIENT)
 );
 
 /*==============================================================*/
-/* Table: STUDIES                                               */
+/* Table: TAG                                                   */
 /*==============================================================*/
-create table STUDIES (
-   ID_USER              INT4                 not null,
-   ID_SESSION           INT4                 not null,
-   constraint PK_STUDIES primary key (ID_USER, ID_SESSION)
-);
-
-/*==============================================================*/
-/* Table: "USER"                                                */
-/*==============================================================*/
-create table "USER" (
-   ID_USER              SERIAL               not null,
-   ID_PAYS              INT4                 not null,
-   FIRST_NAME           VARCHAR(50)          null,
-   LAST_NAME            VARCHAR(50)          null,
-   USERNAME             CHAR(20)             null,
-   PASSWORD             CHAR(20)             null,
-   EMAIL                CHAR(50)             null,
-   PHONE                CHAR(20)             null,
-   CELL_PHONE           CHAR(20)             null,
-   VILLE                CHAR(50)             null,
-   COTE_SELLER          INT4                 null,
-   constraint PK_USER primary key (ID_USER)
+create table TAG (
+   ID_TAG               SERIAL               not null,
+   TAG_NAME             VARCHAR(50)          null,
+   constraint PK_TAG primary key (ID_TAG)
 );
 
 /*==============================================================*/
@@ -170,24 +114,9 @@ create table USERSTATUS (
    constraint PK_USERSTATUS primary key (ID_STATUS)
 );
 
-alter table DEPARTEMENT
-   add constraint FK_DEPARTEM_ASSOCIETE_FACULTE foreign key (ID_FACULTE)
-      references FACULTE (ID_FACULTE)
-      on delete restrict on update restrict;
-
-alter table IS_IN
-   add constraint FK_IS_IN_IS_IN_USER foreign key (ID_USER)
-      references "USER" (ID_USER)
-      on delete restrict on update restrict;
-
-alter table IS_IN
-   add constraint FK_IS_IN_IS_IN2_DEPARTEM foreign key (ID_DEPARTMENT)
-      references DEPARTEMENT (ID_DEPARTMENT)
-      on delete restrict on update restrict;
-
 alter table LOG
-   add constraint FK_LOG_LOGS_USER foreign key (ID_USER)
-      references "USER" (ID_USER)
+   add constraint FK_LOG_LOGS_CLIENT foreign key (ID_CLIENT)
+      references CLIENT (ID_CLIENT)
       on delete restrict on update restrict;
 
 alter table SALE
@@ -196,8 +125,8 @@ alter table SALE
       on delete restrict on update restrict;
 
 alter table SALE
-   add constraint FK_SALE_SELLS_USER foreign key (ID_USER)
-      references "USER" (ID_USER)
+   add constraint FK_SALE_SELLS_CLIENT foreign key (ID_CLIENT)
+      references CLIENT (ID_CLIENT)
       on delete restrict on update restrict;
 
 alter table SALE
@@ -205,23 +134,13 @@ alter table SALE
       references SALESTATUS (ID_STATUSSALE)
       on delete restrict on update restrict;
 
-alter table SALEBYDEPARTMENT
-   add constraint FK_SALEBYDE_SALEBYDEP_DEPARTEM foreign key (ID_DEPARTMENT)
-      references DEPARTEMENT (ID_DEPARTMENT)
+alter table SALEBYTAG
+   add constraint FK_SALEBYTA_SALEBYTAG_TAG foreign key (ID_TAG)
+      references TAG (ID_TAG)
       on delete restrict on update restrict;
 
-alter table SALEBYDEPARTMENT
-   add constraint FK_SALEBYDE_SALEBYDEP_SALE foreign key (ID_SALE)
-      references SALE (ID_SALE)
-      on delete restrict on update restrict;
-
-alter table SALEBYSESSION
-   add constraint FK_SALEBYSE_SALEBYSES_SESSION foreign key (ID_SESSION)
-      references SESSION (ID_SESSION)
-      on delete restrict on update restrict;
-
-alter table SALEBYSESSION
-   add constraint FK_SALEBYSE_SALEBYSES_SALE foreign key (ID_SALE)
+alter table SALEBYTAG
+   add constraint FK_SALEBYTA_SALEBYTAG_SALE foreign key (ID_SALE)
       references SALE (ID_SALE)
       on delete restrict on update restrict;
 
@@ -236,22 +155,7 @@ alter table STATUSBYUSER
       on delete restrict on update restrict;
 
 alter table STATUSBYUSER
-   add constraint FK_STATUSBY_STATUSBYU_USER foreign key (ID_USER)
-      references "USER" (ID_USER)
-      on delete restrict on update restrict;
-
-alter table STUDIES
-   add constraint FK_STUDIES_STUDIES_USER foreign key (ID_USER)
-      references "USER" (ID_USER)
-      on delete restrict on update restrict;
-
-alter table STUDIES
-   add constraint FK_STUDIES_STUDIES2_SESSION foreign key (ID_SESSION)
-      references SESSION (ID_SESSION)
-      on delete restrict on update restrict;
-
-alter table "USER"
-   add constraint FK_USER_HAS_PAYS foreign key (ID_PAYS)
-      references PAYS (ID_PAYS)
+   add constraint FK_STATUSBY_STATUSBYU_CLIENT foreign key (ID_CLIENT)
+      references CLIENT (ID_CLIENT)
       on delete restrict on update restrict;
 
