@@ -1,0 +1,101 @@
+.sale-component {
+    text-align: center;
+}
+
+.sale-component span {
+    display: block;
+}
+
+.sale-left-section {
+    text-align: left;
+    min-width: 500px;
+    max-width: 65%;
+    display: inline-block;
+    margin: 20px;
+}
+
+.sale-right-section {
+    min-width: 200px;
+    max-width: 25%;
+    display: inline-block;
+    text-align: left;
+}
+
+.sale-title {
+    margin: 5px 0;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.sale-location {
+    font-style: italic;
+}
+
+.sale-images {
+    height: 300px;
+    text-align: center;
+    padding: 20px;
+}
+
+.sale-main-image {
+    height: 70%;
+}
+
+.sale-other-images {
+    height: 30%;
+}
+
+.sale-other-images img {
+    display: inline-block;
+    height: 100%;
+    margin: 0 10px;
+}
+
+.sale-description {
+    text-align: justify;
+}
+
+.sale-price {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.sale-nego {
+
+}
+
+.sale-wearandtear {
+
+}
+
+.sale-announcer-label {
+    font-weight: bold;
+}
+
+.sale-announcer {
+
+}
+
+.sale-contact-button {
+
+}
+
+.sale-date-label {
+    font-weight: bold;
+}
+
+.sale-date {
+
+}
+
+.sale-tags-section {
+
+}
+
+.sale-tag {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 3px;
+    margin: 0 3px;
+    display: inline-block !important;
+}
