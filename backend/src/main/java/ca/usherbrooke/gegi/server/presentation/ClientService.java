@@ -12,7 +12,7 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Context;
 import java.util.List;
 
-@Path("user")
+@Path("client")
 public class ClientService {
 
     @Context
@@ -25,7 +25,16 @@ public class ClientService {
     public List<Client> getSale(@QueryParam("id") Integer id) {
 
         System.out.println(httpServletRequest.getUserPrincipal().getName());
+        //clientMapper.InsertClient(CreateClient());
+
         List<Client> clients = clientMapper.select(id);
         return clients;
+    }
+
+    private Client CreateClient(){
+        Client tempClient = new Client();
+        tempClient.setFirstName("insert FN");
+        tempClient.setLastName("insert LN");
+        return tempClient;
     }
 }
