@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import Header from "./components/header";
 import Article from "./components/article";
+import { Link } from "react-router-dom";
 
 function App() {
   const img =
@@ -14,30 +15,36 @@ function App() {
     <div className="App">
       <Header />
       <div className="row">
-        <div className="column">
-          <Article
-            title={"Clean Code"}
-            src={img}
-            description={"Livre de scrap"}
-            price={"10$"}
-          />
-        </div>
-        <div className="column">
-          <Article
-            title={"Programming Python"}
-            src={img2}
-            description={"Livre pour apprendre le python"}
-            price={"20$"}
-          />
-        </div>
-        <div className="column">
-          <Article
-            title={"Head First Java"}
-            src={img3}
-            description={"Livre pour apprendre le Java"}
-            price={"30$"}
-          />
-        </div>
+          <div className="column">
+          <Link to="/ViewArticle/1">
+            <Article
+                title={"Clean Code"}
+                src={img}
+                description={"Livre de scrap"}
+                price={"10$"}
+            />
+          </Link>
+          </div>
+          <div className="column">
+          <Link to="/ViewArticle/2">
+            <Article
+                title={"Programming Python"}
+                src={img2}
+                description={"Livre pour apprendre le python"}
+                price={"20$"}
+            />
+          </Link>
+          </div>
+          <div className="column">
+          <Link to="/ViewArticle/3">
+            <Article
+                title={"Head First Java"}
+                src={img3}
+                description={"Livre pour apprendre le Java"}
+                price={"30$"}
+            />
+          </Link>
+          </div>
       </div>
     </div>
   );

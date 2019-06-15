@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom'
 import "../assets/header.css";
 
 class Header extends Component {
@@ -8,9 +9,9 @@ class Header extends Component {
         <div>
           <ul>
             <li>
-              <a href="#home">nouvel USage</a>
+              <Link to="/">Nouvel USage</Link>
             </li>
-            <li>
+            <li className="profile-menu">
               <a>
                 <i className="material-icons">account_circle</i>
               </a>
