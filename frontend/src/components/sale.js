@@ -6,26 +6,26 @@ class Sale extends Component {
   render() {
     return (
       <div className="sale-component">
-        <div className="sale-left-section">
+        <article className="sale-left-section">
           <span className="sale-title">{this.props.title}</span>
           <span className="sale-location">{this.props.location}</span>
           <div className="sale-images">
-            <img src={this.props.imgsources[0]} className="sale-main-image" />
+            <img src={this.props.imgsources[0]} className="sale-main-image" alt={this.props.imgsources[0]} />
             <div className="sale-other-images">
-              <img src={this.props.imgsources[1]} />
-              <img src={this.props.imgsources[2]} />
-              <img src={this.props.imgsources[3]} />
+              <img src={this.props.imgsources[1]} alt={this.props.imgsources[1]} />
+              <img src={this.props.imgsources[2]} alt={this.props.imgsources[2]} />
+              <img src={this.props.imgsources[3]} alt={this.props.imgsources[3]} />
             </div>
           </div>
+          <h4>Description</h4>
           <div className="sale-description">{this.props.description}</div>
-        </div>
-        <div className="sale-right-section">
-          <span className="sale-price">{this.props.price}$</span>
-          <span className="sale-nego">{this.props.nego ? "nego." : "fixe"}</span>
+        </article>
+        <aside className="sale-right-section">
+          <span className="sale-price">{this.props.price} $</span>
+          <span className="sale-nego">{this.props.nego ? "négociable" : "fixe"}</span>
           <br />
           <span className="sale-wearandtear">Condition: {this.props.wear}/10</span>
           <br />
-          <span className="sale-announcer-label">Annonceur</span>
           <span className="sale-announcer">{this.props.announcer}</span>
           <button className="sale-contact-button">Contacter</button>
           <br />
@@ -34,7 +34,7 @@ class Sale extends Component {
           <span className="sale-date">{this.props.date}</span>
           <br />
           <div className="sale-tags-section">{this.props.tags.map((item, key) => <span className="sale-tag">{item}</span>)}</div>
-        </div>
+        </aside>
       </div>
     );
   }

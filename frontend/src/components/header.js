@@ -5,21 +5,16 @@ import "../assets/header.css";
 class Header extends Component {
   render() {
     return (
-      <nav>
-        <div>
+      <header className="header-container">
           <ul>
             <li>
               <Link to="/">Nouvel USage</Link>
             </li>
             <li className="profile-menu">
-              <a>
-                <i className="material-icons">account_circle</i>
-              </a>
+              <Link to="/"><i className="material-icons">account_circle</i></Link>
             </li>
           </ul>
-          <span />
-        </div>
-      </nav>
+      </header>
     );
   }
 }
