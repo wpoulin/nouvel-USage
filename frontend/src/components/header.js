@@ -11,7 +11,7 @@ class Header extends Component {
               <Link to="/">Nouvel USage</Link>
             </li>
             <li className="profile-menu">
-              <Link to="/"><i className="material-icons">account_circle</i></Link>
+              <Link to="/MyProfile"><i className="material-icons">account_circle</i></Link>
             </li>
           </ul>
       </header>

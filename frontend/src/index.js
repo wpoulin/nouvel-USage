@@ -6,6 +6,7 @@ import ViewArticle from './containers/ViewArticle';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import * as serviceWorker from './serviceWorker';
 import NotFound from './containers/NotFound';
+import MyProfile from './containers/MyProfile';
 
 const routing = (
     <Router>
@@ -13,6 +14,7 @@ const routing = (
             <Switch>
                 <Route exact path="/" component={App} />
                 <Route path="/ViewArticle/:id" component={ViewArticle} />
+                <Route path="/MyProfile" component={MyProfile} />
                 <Route component={NotFound} />
             </Switch>
         </div>
