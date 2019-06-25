@@ -25,7 +25,19 @@ public class SaleService {
     public List<Sale> getSale(@QueryParam("id") Integer id) {
 
         System.out.println(httpServletRequest.getUserPrincipal().getName());
-        List<Sale> sales = saleMapper.select(id);
+        //saleMapper.InsertSale(CreateSale());
+        List<Sale> sales = saleMapper.GetSaleById(id);
         return sales;
     }
+
+    private Sale CreateSale(){
+        Sale tempSale = new Sale();
+        tempSale.setSaleDescription("insert description");
+        tempSale.setSaleTitle("insert title");
+        tempSale.setIdCategory(1);
+        tempSale.setIdClient(1);
+        tempSale.setIdStatusSale(1);
+        return tempSale;
+    }
+
 }

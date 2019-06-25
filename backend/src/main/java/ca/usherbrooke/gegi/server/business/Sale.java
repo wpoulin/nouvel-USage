@@ -4,6 +4,9 @@ import java.time.format.DateTimeFormatter;
 
 public class Sale {
     private Integer id_sale;
+    private Integer id_category;
+    private Integer id_client;
+    private Integer id_statusSale;
     private String sale_title;
     private String sale_description;
     private DateTimeFormatter sale_date;
@@ -17,6 +20,27 @@ public class Sale {
     }
     public void setIdSale(Integer p_idSale) {
         this.id_sale = p_idSale;
+    }
+
+    public Integer getIdCategory() {
+        return id_category;
+    }
+    public void setIdCategory(Integer p_idCategory) {
+        this.id_category = p_idCategory;
+    }
+
+    public Integer getIdClient() {
+        return id_client;
+    }
+    public void setIdClient(Integer p_idClient) {
+        this.id_client = p_idClient;
+    }
+
+    public Integer getIdStatusSale() {
+        return id_statusSale;
+    }
+    public void setIdStatusSale(Integer p_idStatusSale) {
+        this.id_statusSale = p_idStatusSale;
     }
 
     public String getSaleTitle() {
@@ -66,6 +90,9 @@ public class Sale {
     public String toString() {
         return "Sale{" +
                 "id_sale=" + id_sale +
+                ", id_category='" + id_category + '\'' +
+                ", id_client='" + id_client + '\'' +
+                ", id_statusSale='" + id_statusSale + '\'' +
                 ", sale_title='" + sale_title + '\'' +
                 ", sale_description='" + sale_description + '\'' +
                 ", sale_date='" + sale_date + '\'' +

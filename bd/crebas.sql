@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      PostgreSQL 8                                 */
-/* Created on:     2019-06-13 09:56:59                          */
+/* Created on:     2019-06-14 13:53:21                          */
 /*==============================================================*/
 
 
@@ -75,6 +75,7 @@ create table SALEPICTURE (
    ID_PICTURE           SERIAL               not null,
    ID_SALE              INT4                 not null,
    PICTURE_LINK         VARCHAR(500)         null,
+   "PRIMARY"            BOOL                 null,
    constraint PK_SALEPICTURE primary key (ID_PICTURE)
 );
 

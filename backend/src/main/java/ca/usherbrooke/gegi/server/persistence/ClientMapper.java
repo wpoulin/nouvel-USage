@@ -11,4 +11,5 @@ import java.util.List;
 public interface ClientMapper {
 
     List<Client> select(@Param("id") Integer id);
+    void InsertClient(@Param("client") Client client);
 }
