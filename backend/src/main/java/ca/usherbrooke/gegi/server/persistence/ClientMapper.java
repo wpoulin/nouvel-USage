@@ -10,6 +10,6 @@ import java.util.List;
 @Mapper
 public interface ClientMapper {
 
-    List<Client> select(@Param("id") Integer id);
+    List<Client> GetClientById(@Param("id") int id);
     void InsertClient(@Param("client") Client client);
 }

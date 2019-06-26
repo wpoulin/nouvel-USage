@@ -10,6 +10,7 @@ import java.util.List;
 @Mapper
 public interface SaleMapper {
 
-    List<Sale> GetSaleById(@Param("id") Integer id);
+    List<Sale> GetSaleById(@Param("id") int id);
+
     void InsertSale(@Param("sale") Sale sale);
 }

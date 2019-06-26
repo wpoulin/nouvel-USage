@@ -21,7 +21,7 @@ function App() {
                 title={"Clean Code"}
                 src={img}
                 description={"Livre de scrap"}
-                price={"10$"}
+                price={"19.99$"}
             />
           </Link>
           </div>

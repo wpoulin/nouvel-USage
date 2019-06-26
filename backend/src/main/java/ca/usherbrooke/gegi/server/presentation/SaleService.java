@@ -5,14 +5,12 @@ import ca.usherbrooke.gegi.server.business.Sale;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
+import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
+import javax.ws.rs.core.MediaType;
 import java.util.List;
 
-@Path("sale")
+@Path("/sale")
 public class SaleService {
 
     @Context
@@ -21,16 +19,21 @@ public class SaleService {
     @Inject private SaleMapper saleMapper;
 
     @GET
+    @Path("{id}")
     @Produces("application/json")
-    public List<Sale> getSale(@QueryParam("id") Integer id) {
+    public List<Sale> getSale(@PathParam("id") Integer id) {
 
         System.out.println(httpServletRequest.getUserPrincipal().getName());
+        System.out.println("Test 3");
         //saleMapper.InsertSale(CreateSale());
         List<Sale> sales = saleMapper.GetSaleById(id);
         return sales;
     }
 
-    private Sale CreateSale(){
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.TEXT_PLAIN)
+    public Sale CreateSale(Sale saleJSON){
         Sale tempSale = new Sale();
         tempSale.setSaleDescription("insert description");
         tempSale.setSaleTitle("insert title");

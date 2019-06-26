@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="ca.usherbrooke.gegi.server.persistence.SaleMapper">
 
-    <select id="GetSaleById" resultType="Sale">
+    <select id="GetSaleById" parameterType='int' resultType="Sale">
       SELECT
         id_sale,
         id_category,

@@ -1,8 +1,22 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import "../assets/sale.css";
+import axios from 'axios';
 
 class Sale extends Component {
+
+  componentDidMount() {
+    // eslint-disable-next-line no-console
+    axios.get(`localhost:8080/backend/api/sale/1`)
+      .then(res => {
+        // eslint-disable-next-line no-console
+        console.log("test")
+        console.log(res.data)
+        //const persons = res.data;
+        //this.setState({ persons });
+      })
+  }
+
   render() {
     return (
       <div className="sale-component">
