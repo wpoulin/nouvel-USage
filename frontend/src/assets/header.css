@@ -1,14 +1,20 @@
+.header-container {
+  background-color: #00a758;
+}
+
 ul {
+  display: block;
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #4a4a4a;
-  margin: 0px 0 40px 0;
 }
 
 li {
   float: left;
+  display: block;
+  text-align: center;
+  font-size: 22px;
 }
 
 li.profile-menu {
@@ -17,14 +23,12 @@ li.profile-menu {
 
 li a {
   display: block;
-  color: white;
-  text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 22px;
+  color: white;
 }
 
-li a:hover:not(.active) {
-  background-color: #3a3a3a;
+li:hover:not(.active) {
+  background-color: #016735;
 }
 

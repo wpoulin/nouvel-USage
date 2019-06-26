@@ -1,24 +1,42 @@
+body {
+    background-color: #f7f5f0;
+    color: #3a3a3a;
+    font-family: 'Roboto Slab', sans-serif;
+}
+
 .sale-component {
     text-align: center;
-}
+    display: table;
+    width: 100%;
+    height: 100%;
+} 
 
 .sale-component span {
     display: block;
 }
 
 .sale-left-section {
+    display: table-cell;
+    background-color: #fff;
     text-align: left;
-    min-width: 500px;
-    max-width: 65%;
-    display: inline-block;
+    max-width: 615px;
+    padding: 20px;
     margin: 20px;
 }
 
 .sale-right-section {
-    min-width: 200px;
-    max-width: 25%;
-    display: inline-block;
-    text-align: left;
+    display: table-cell;
+    background-color: #fff;
+    width: 200px;
+    max-width: 350px;
+    padding: 20px;
+    text-align: center;
+}
+
+@media (max-width: 450px) {
+    .sale-left-section, .sale-right-section {
+        display: inline-block;
+    }
 }
 
 .sale-title {
@@ -42,7 +60,9 @@
 }
 
 .sale-other-images {
+    overflow: hidden;
     height: 30%;
+    margin-top: 10px;
 }
 
 .sale-other-images img {
@@ -61,7 +81,8 @@
 }
 
 .sale-nego {
-
+    font-style: italic;
+    font-size: 0.85rem;
 }
 
 .sale-wearandtear {
@@ -73,11 +94,27 @@
 }
 
 .sale-announcer {
-
+    font-weight: bold;
+    text-align: center;
+    margin: 5px 0;
 }
 
 .sale-contact-button {
+    color: #fff;
+    background-color: #00a758;
+    border-radius: 10px;
+    border: 0 none;
+    font-family: 'Arial', sans-serif;
+    font-weight: 700;
+    line-height: 1.45;
+    padding: 9px 31px;
+    transition: all 0.25s ease-out;
+    cursor: pointer;
+    margin: 5px 0;
+}
 
+.sale-contact-button:hover {
+  background-color: #016735;
 }
 
 .sale-date-label {
@@ -85,17 +122,26 @@
 }
 
 .sale-date {
-
+    line-height: 1.5rem;
 }
 
 .sale-tags-section {
-
+    margin: 5px 0;
 }
 
 .sale-tag {
-    border: 1px solid black;
+    color: #fff;
+    background: #00a758;
+    font-family: 'Arial', sans-serif;
+    font-size: 0.75rem;
+    border: 0 none;
     border-radius: 5px;
-    padding: 3px;
+    padding: 5px 10px;
     margin: 0 3px;
     display: inline-block !important;
+    cursor: pointer;
+}
+
+.sale-tag:hover {
+  background-color: #016735;
 }
