@@ -1,5 +1,52 @@
 .article {
-  margin: 1px 1px 1px 1px;
-  border: 5px solid black;
-  height: 500px;
+  padding: 10px;
+  border: 1px solid #747474;
+  border-radius: 10px;
+  background: #fff;
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+  grid-template-rows: 50px 150px;
+  margin-bottom: 10px;
+}
+
+.article-title {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  font-weight: 700;
+}
+
+.article-price {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.article-img {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  width: 100%;
+  height: 100%;
+}
+
+.article-description {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+
+  text-align: justify;
+  overflow: hidden;
+  padding: 5px;
+}
+
+.article-wear {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
 }

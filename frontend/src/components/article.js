@@ -6,13 +6,11 @@ class Article extends Component {
   render() {
     return (
       <div className="article">
-        <h4>{this.props.title}</h4>
-        <img src={this.props.src} height="300px" alt={this.props.title}/>
-        <p>
-          Description : {this.props.description}
-          <br />
-          Prix : {this.props.price}
-        </p>
+        <span className="article-title">{this.props.title}</span>
+        <span className="article-price">{this.props.price} $</span>
+        <img className="article-img" src={this.props.src} alt={this.props.title}/>
+        <span className="article-description">{this.props.description}</span>
+        <span className="article-wear">{this.props.wear}/10</span>
       </div>
     );
   }
@@ -22,7 +20,8 @@ Article.propTypes = {
   title: PropTypes.string,
   src: PropTypes.string,
   description: PropTypes.string,
-  price: PropTypes.string
+  price: PropTypes.number,
+  wear: PropTypes.number
 };
 
 export default Article;

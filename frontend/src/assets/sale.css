@@ -21,7 +21,7 @@
 
 .sale-mid-section {
 	display: table-cell;
-	width: 5%;
+	width: 2.5%;
 }
 
 .sale-right-section {
@@ -34,13 +34,9 @@
 }
 
 @media (max-width: 450px) {
-	.sale-left-section, .sale-right-section {
+	.sale-left-section, .sale-right-section, .sale-mid-section {
 		width: 90%;
 		display: inline-block;
-	}
-
-	.sale-mid-section {
-		display: none;
 	}
 }
 
