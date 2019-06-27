@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import ProfileInfo from "../components/profileInfo";
 
 class AddSale extends Component {
 	render () {

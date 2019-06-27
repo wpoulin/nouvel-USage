@@ -12,7 +12,7 @@ class Header extends Component {
               <Link to="/">Nouvel USage</Link>
             </li>
             <li className="profile-dropdown">
-              <a className="profile-dropdown-button"><i className="material-icons">account_circle</i></a>
+              <Link to="MyProfile" className="profile-dropdown-button"><i className="material-icons">account_circle</i></Link>
               <div class="profile-dropdown-content">
                 <Link to="/MyProfile" className="profile-dropdown-element">Mon profil</Link>
                 <Link to="/MySales" className="profile-dropdown-element">Mes annonces</Link>
