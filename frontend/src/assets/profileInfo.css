@@ -11,18 +11,31 @@
 	margin: auto;
 	max-width: 600px;
 	display: grid;
-	grid-template-columns: 50% 50%;
+	grid-template-columns: 48% 48%;
+	grid-row-gap: 10px;
+	grid-column-gap: 10px;
 }
 
 .profile-label {
 	text-align: right;
 }
 
+.profile-input {
+	border: 1px solid #d6e0ec;
+	border-radius: 5px;
+	padding: 5px;
+}
+
 .profile-apply-button {
-	grid-column-start: 2;
+	width: 70%;
+	margin: auto;
+	grid-column-start: 1;
+	grid-column-end: 3;
 }
 
 .profile-pw-reset {
 	display: block;
 	margin: auto;
+	grid-column-start: 1;
+	grid-column-end: 3;
 }
