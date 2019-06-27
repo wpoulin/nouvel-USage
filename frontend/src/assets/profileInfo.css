@@ -1,32 +1,28 @@
 .profile-component {
-    width: 100%;
-    height: 100%;
+	width: 100%;
+	height: 100%;
 }
 
 .profile-component article{
-    display: block;
+	display: block;
 }
 
 .profile-component article form {
-    margin: auto;
-    max-width: 600px;
-    display: grid;
-    grid-template-columns: 50% 50%;
+	margin: auto;
+	max-width: 600px;
+	display: grid;
+	grid-template-columns: 50% 50%;
 }
 
 .profile-label {
-    text-align: right;
-}
-
-.profile-input {
-
+	text-align: right;
 }
 
 .profile-apply-button {
-    grid-column-start: 2;
+	grid-column-start: 2;
 }
 
 .profile-pw-reset {
-    display: block;
-    margin: auto;
+	display: block;
+	margin: auto;
 }
