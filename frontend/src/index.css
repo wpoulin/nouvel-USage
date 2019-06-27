@@ -19,3 +19,13 @@ code {
   max-width: 800px;
   margin: auto;
 }
+
+select {
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+}
+
+select::-ms-expand {
+  display: none;
+}

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "./components/header";
+import SearchBar from "./components/searchbar";
 import Home from "./containers/Home";
 import ViewArticle from './containers/ViewArticle';
 import NotFound from './containers/NotFound';
@@ -11,6 +12,7 @@ class App extends Component {
     return (
       <Router>
         <Header />
+				<SearchBar />
         <div className="App">
           <Switch>
             <Route exact path="/" component={Home} />

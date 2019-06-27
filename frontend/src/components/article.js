@@ -7,7 +7,7 @@ class Article extends Component {
     return (
       <div className="article">
         <h4>{this.props.title}</h4>
-        <img src={this.props.src} height="300px" />
+        <img src={this.props.src} height="300px" alt={this.props.title}/>
         <p>
           Description : {this.props.description}
           <br />
