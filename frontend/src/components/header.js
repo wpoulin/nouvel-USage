@@ -6,6 +6,7 @@ class Header extends Component {
   render() {
     return (
       <header className="header-container">
+        <div className="header-inner">
           <ul>
             <li>
               <Link to="/">Nouvel USage</Link>
@@ -14,6 +15,7 @@ class Header extends Component {
               <Link to="/MyProfile"><i className="material-icons">account_circle</i></Link>
             </li>
           </ul>
+        </div>
       </header>
     );
   }

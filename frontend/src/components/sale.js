@@ -20,6 +20,7 @@ class Sale extends Component {
           <h4>Description</h4>
           <div className="sale-description">{this.props.description}</div>
         </article>
+        <div className="sale-mid-section"></div>
         <aside className="sale-right-section">
           <span className="sale-price">{this.props.price} $</span>
           <span className="sale-nego">{this.props.nego ? "négociable" : "fixe"}</span>

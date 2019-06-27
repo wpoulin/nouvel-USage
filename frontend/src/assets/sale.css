@@ -7,7 +7,8 @@ body {
 .sale-component {
     text-align: center;
     display: table;
-    width: 100%;
+    margin: auto;
+    max-width: 800px;
     height: 100%;
 } 
 
@@ -17,25 +18,35 @@ body {
 
 .sale-left-section {
     display: table-cell;
-    background-color: #fff;
+    background: #fff;
     text-align: left;
-    max-width: 615px;
+    width: 65%;
     padding: 20px;
-    margin: 20px;
+    border-radius: 10px;
+}
+
+.sale-mid-section {
+    display: table-cell;
+    width: 5%;
 }
 
 .sale-right-section {
     display: table-cell;
-    background-color: #fff;
-    width: 200px;
-    max-width: 350px;
+    background: #fff;
+    width: 20%;
     padding: 20px;
     text-align: center;
+    border-radius: 10px;
 }
 
 @media (max-width: 450px) {
     .sale-left-section, .sale-right-section {
+        width: 90%;
         display: inline-block;
+    }
+
+    .sale-mid-section {
+        display: none;
     }
 }
 
