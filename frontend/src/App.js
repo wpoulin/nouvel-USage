@@ -6,6 +6,8 @@ import Home from "./containers/Home";
 import ViewArticle from './containers/ViewArticle';
 import NotFound from './containers/NotFound';
 import MyProfile from './containers/MyProfile';
+import MySales from './containers/MySales';
+import AddSale from './containers/AddSale';
 
 class App extends Component {
   render() {
@@ -18,6 +20,8 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route path="/ViewArticle/:id" component={ViewArticle} />
             <Route path="/MyProfile" component={MyProfile} />
+            <Route path="/MySales" component={MySales} />
+            <Route path="/AddSale" component={AddSale} />
             <Route component={NotFound} />
           </Switch>
         </div>

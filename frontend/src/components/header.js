@@ -16,6 +16,7 @@ class Header extends Component {
               <div class="profile-dropdown-content">
                 <Link to="/MyProfile" className="profile-dropdown-element">Mon profil</Link>
                 <Link to="/MySales" className="profile-dropdown-element">Mes annonces</Link>
+                <Link to="/AddSale" className="profile-dropdown-element">Annoncer</Link>
               </div>
             </li>
           </ul>

@@ -29,8 +29,8 @@
   grid-column-end: 2;
   grid-row-start: 2;
   grid-row-end: 3;
-  width: 100%;
   height: 100%;
+  margin: auto;
 }
 
 .article-description {
