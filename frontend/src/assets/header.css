@@ -29,7 +29,7 @@ li {
   font-size: 22px;
 }
 
-li.profile-menu {
+li.profile-dropdown {
   float: right;
 }
 
@@ -40,7 +40,30 @@ li a {
   color: #fff;
 }
 
-li:hover:not(.active) {
-  background-color: #016735;
+.profile-dropdown-button {
+  cursor: pointer;
 }
 
+.profile-dropdown-content {
+  cursor: pointer;
+  display: none;
+  position: fixed;
+  background-color: #00a758;
+}
+
+@media(max-width: 900px) {
+  .profile-dropdown-content {
+    right: 0;
+  }
+}
+
+.profile-dropdown-element {
+  font-size: 0.8rem;
+  line-height: 0.8rem;
+}
+
+.profile-dropdown:hover .profile-dropdown-content { display: block; }
+
+.profile-dropdown-element:hover {
+  background-color: #016735;
+}
