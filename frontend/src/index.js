@@ -15,7 +15,9 @@ const routing = (
                 <Route exact path="/" component={App} />
                 <Route path="/ViewArticle/:id" component={ViewArticle} />
                 <Route path="/MyProfile" component={MyProfile} />
+                <Route path="/backend" component={App}/>
                 <Route component={NotFound} />
+                
             </Switch>
         </div>
     </Router>

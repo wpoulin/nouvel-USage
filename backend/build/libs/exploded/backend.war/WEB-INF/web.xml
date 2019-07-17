@@ -14,7 +14,7 @@
         </init-param>
         <init-param>
             <param-name>serverName</param-name>
-            <param-value>http://localhost:8080</param-value>
+            <param-value>http://localhost:3000</param-value>
         </init-param>
     </filter>
     <filter-mapping>
@@ -32,7 +32,7 @@
         </init-param>
         <init-param>
             <param-name>serverName</param-name>
-            <param-value>http://localhost:8080</param-value>
+            <param-value>http://localhost:3000</param-value>
         </init-param>
     </filter>
     <filter-mapping>
