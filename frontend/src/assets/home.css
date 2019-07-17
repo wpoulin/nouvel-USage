@@ -1,0 +1,15 @@
+.home a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.filter-section {
+    width: 18%;
+    float: left;
+    background: #fff;
+}
+
+.home-articles-section {
+    width: 80%;
+    float: right;
+}
