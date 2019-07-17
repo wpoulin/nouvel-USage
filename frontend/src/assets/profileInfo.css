@@ -1,32 +1,41 @@
 .profile-component {
-    width: 100%;
-    height: 100%;
+	width: 100%;
+	height: 100%;
 }
 
 .profile-component article{
-    display: block;
+	display: block;
 }
 
 .profile-component article form {
-    margin: auto;
-    max-width: 600px;
-    display: grid;
-    grid-template-columns: 50% 50%;
+	margin: auto;
+	max-width: 600px;
+	display: grid;
+	grid-template-columns: 48% 48%;
+	grid-row-gap: 10px;
+	grid-column-gap: 10px;
 }
 
 .profile-label {
-    text-align: right;
+	text-align: right;
 }
 
 .profile-input {
-
+	border: 1px solid #d6e0ec;
+	border-radius: 5px;
+	padding: 5px;
 }
 
 .profile-apply-button {
-    grid-column-start: 2;
+	width: 70%;
+	margin: auto;
+	grid-column-start: 1;
+	grid-column-end: 3;
 }
 
 .profile-pw-reset {
-    display: block;
-    margin: auto;
+	display: block;
+	margin: auto;
+	grid-column-start: 1;
+	grid-column-end: 3;
 }
