@@ -1,0 +1,41 @@
+.newSale-component {
+	width: 100%;
+	height: 100%;
+}
+
+.newSale-component article{
+	display: block;
+}
+
+.newSale-component article form {
+	margin: auto;
+	max-width: 600px;
+	display: grid;
+	grid-template-columns: 48% 48%;
+	grid-row-gap: 10px;
+	grid-column-gap: 10px;
+}
+
+.newSale-label {
+	text-align: right;
+}
+
+.newSale-input {
+	border: 1px solid #d6e0ec;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+.newSale-apply-button {
+	width: 70%;
+	margin: auto;
+	grid-column-start: 1;
+	grid-column-end: 3;
+}
+
+.newSale-pw-reset {
+	display: block;
+	margin: auto;
+	grid-column-start: 1;
+	grid-column-end: 3;
+}

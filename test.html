@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+
+
+
+<title>Service central d'authentification &#8211; Université de Sherbrooke</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport"
+          content="width= device-width, initial-scale=1, maximum-scale=1"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+    <script src="js/jquery-1.9.1.js?v=14.5.7"></script>
+    <script src="js/jquery.capslockstate.js?v=14.5.7"></script>
+    <script src="js/app.js?v=14.5.7"></script>
+    <link type="text/css" rel="stylesheet" href='css/responsive.css?v=14.5.7'/>
+    <link type="text/css" rel="stylesheet" href='https://www.usherbrooke.ca/webfonts/udes-icons/css/udes-icons.css?v=14.5.7'/>
+    <link type="text/css" rel="stylesheet" href='https://www.usherbrooke.ca/webfonts/open-sans.css?v=14.5.7'/>
+    <link rel="icon" href="favicon.ico?v=14.5.7" type="image/x-icon"/>
+</head>
+<body>
+<div id="page_wrapper">
+    <div id="stickyHeader">
+        <header>
+            <a tabindex="-1" href="http://www.usherbrooke.ca">
+                <h1 class="visuallyhidden">Université de Sherbrooke</h1>
+                <img id="logo-mobile" src="./css/images/logo_udes-carre-couleur.png?v=14.5.7" alt="Université de Sherbrooke (logo)">
+                <div class="header_title_udes">
+                    <img src="https://www.usherbrooke.ca/res/fileadmin/logo/UdeS_blanc.png?v=14.5.7" alt="Université de Sherbrooke">
+                </div>
+            </a>
+        </header>
+    </div>
+    <header id="header-desktop">
+        <div class="cf">
+            <h1 class="visuallyhidden">Université de Sherbrooke</h1>
+            <a id="logo-desktop" class="cf" tabindex="-1" href="http://www.usherbrooke.ca/"><img class="logo" src="https://www.usherbrooke.ca/res/fileadmin/logo/logo_udes_188x44.png?v=14.5.7" alt="Université de Sherbrooke"></a>
+            <div class="header_title_udes"><img src="https://www.usherbrooke.ca/res/fileadmin/logo/UdeS_blanc.png?v=14.5.7">
+            </div>
+        </div>
+    </header>
+
+    <section id="main">
+        <header>
+            <div class="siteTitleStd">
+                <h1>Service central d'authentification</h1>
+            </div>
+        </header>
+        <noscript id="jsMessage">
+            <p>Pour une meilleur expérience de navigation, JavaScript doit être activé sur votre navigateur.</p>
+        </noscript>
+
+        <div id="no-cookie-message" class="errors hidden error-info message-box"
+             cause="cookie disabled">
+            <h2>Cookies navigateur désactivés</h2>
+            <p>Votre navigateur ne supporte pas les cookies. L'authentification centralisée NE FONCTIONNERA PAS.</p>
+        </div>
+
+        <!--tag pour url MON ACCES  -->
+        <!--tag pour url INFO AIDE  -->
+        <div class="template-login">
+            <section class="content-area">
+                <i class="icon-lock"></i>
+                <div class="multicolumn">
+                    <section class="col1">
+                        <form id="authentification" action="/login?service=http%3A%2F%2Flocalhost%3A3000%2Fbackend%2F" method="post" autocomplete="off"><fieldset>
+                                <h2>
+                                    Connexion</h2>
+
+                                <div class="field">
+                                    <label for="username"><u>I</u>dentifiant
+
+
+
+<div
+    class="extra-box">
+    <i class="icon-help-circled-1 btn-extra-info" data-info="5e539cd1-34be-48b3-be3e-f332fd1946db"></i>
+    <div id="info-5e539cd1-34be-48b3-be3e-f332fd1946db" class="extra-info">
+        <button class="close" data-dismiss="alert"><span>Fermer</span><i class="icon-cancel-circled"></i></button>
+        <div class="info-content">
+            <p>Identifiants acceptés</p>
+            <ul><li>Code d'identification personnel (CIP)</li><li>Adresse de courriel @USherbrooke.ca</li><li>Adresse de courriel autre</li></ul>
+        </div>
+    </div>
+</div>
+</label>
+
+                                    <input id="username" name="username" class="required" tabindex="1" placeholder="Adresse courriel ou CIP" autofocus="autofocus" required="required" accesskey="I" type="text" value="" size="30" autocomplete="off"/><div class="errors hidden" cause="required" ><i class="icon-attention"></i>Champ requis</div>
+                                </div>
+                                <div class="field">
+                                    <label for="password"><u>M</u>ot de passe<a href="http://www.usherbrooke.ca/monacces/mot-de-passe-oubli?redirection=http%3A%2F%2Flocalhost%3A3000%2Fbackend%2F&app=localhost" tabindex="-1">(oublié?)</a>
+                                    </label>
+
+                                    <input id="password" name="password" class="required" tabindex="2" required="required" accesskey="M" type="password" value="" size="30" autocomplete="off"/><div class="errors hidden error-info" cause="required" ><i class="icon-attention"></i>Champ requis</div>
+                                    <div class="errors hidden warning-info" cause="capslock" ><i class="icon-attention"></i>Les majuscules sont verrouillés</div>
+                                </div>
+
+                                <input type="hidden" name="lt" value="LT-1292852-UsnBhBc6fveXwVjGSQr9e0OEdF4oNl-n2" />
+                                <input type="hidden" name="execution" value="70545614-87c5-4d58-a2f5-d8eae65c65ed_ZXlKbGJtTWlPaUpCTVRJNFIwTk5JaXdpWVd4bklqb2laR2x5SW4wLi43TFZqOEJfRU5qdHlrRk9sLi1BQ0d2cTc3Nld2akZsOVRQd3hkdEtEZTVlMy1SLURxeE9oOUluSUduWVpPeW5fUUx6U0V0aTNRRHFLb21NMW53aC1HMzNCN3NvOE9iSFZzYk5jRVl1SW5VbkhNLV9wN0x6MEw0UTZzeENfeF90N01ZR0YtWE04RF9yYzhaOGJrckVmRHVadXlYd2k2OThuOU9ta3FVVUVOVk1yaUJTS1dONWM1bzQzRHFYZWlBZTVvanlkd3l4OHY1d2J2djZrY0M0N0VldjhqbEZET1NzMTBwWU1EZ005bWZGYUtYUFB1M05DNFhGMmhQVk1ES0IwZ2FqbG10bG0wSXJEeUVvdDd5V0EyZ1lyXzlKOEdJbkhqWlU1bnNzUHIzVWd5dGNzNnRhRkRBS2lVNHMzWjJ5ajlMQ0FhaDRZcGFwVnhkZnhadVBYeFBtbjBCUlZGdjlGTU5oSzNjOWFWbEtPZUozNU1TNG1tWm5wRnQwZlN4N21LOWtWSXV5SlFseFB4T2Z5YmE5RGVWa0xBZWlNNTU3QWZGaVdiNDVRbjVuQ0k1V2ZoVkdVcXFDOGZBQ3V4SUUzWDZlQU9pQmF2ek9tSHJWTS1EOGctLWpnNlR1ZUhOWFRKUmZUNVBkNEhOamhHOUpZbUpVZWxKMEhEUFNNM3JEM1RaQUVhYUZ6b21PN19UYUNyZ2h5a2R4M2VCQlpLd1pudFJQVURSLWxGWHZIVGhYNlRvc3hkOFZxM2J3Q2RiTFlkbTEyVUNfbHdNTGRwVWo5T3NCdnNiZS1UTWdtVzNwbkllb2JEenNNbzZsMVBZdHFBdHJ5VTJUYTlkOE1KWDdob1IyYTl2Q1VPaDlNQ2lZS1hEMUcxd0tCWWpjb08yWElDdlVZR2phb2N2cE9HOHFjN0wtU3FIOFBhMzFPa1VzZHlqVGFCRGg5dnVxc1JUR1l6RHgxbDhMZ29tMkw1dUY2ajU3b1pVN3prMGl5TTFfazhCVEt3UFY1a3FYYmJ5aFJLcC14cFNUMW85YjZDTFR2YjFQQlVHNVJWMjlWdXExdnFQekN0WVBVaG02SmRPYVN5aHdQN0YyZUVaSFdsWXJwYmxHcUZXZl9tMTNQQ1BxRHNHdkI0Nnd1WGR2V3NNcEM0bmdoS0JXZ3dyS0RmMHh0Sm5fR3JIMXR1S3FDMFFLVHI5TldZTGYxWFdYQUJ2MUl0Yld3dWlNNWlBY0tHS2ptdUw5S2EwWUF6WUlMMll5QnU3WDZ6dFFZQnE5QWRBSzRtWDdMR1lnZHVocFVJNjFvdnZVeE5YdUlyWEUyeGtxbU5tWDZITHJqek4tTmxHVXo3aDVNZzRKYlhCOF9nMHpkVE95ZHc3NHR3Zjc3Tl9pc19va0pZazhMNllJZm56aTBLLWJpaGlfUWttX0l1Q3N0WmV4Y2J1NEZWSjlxc25yU3RWNFlib0xHMUFYdHducEloeUJ4aXBYVUVvUFcteVpYLUViemQtTThxdW5QT25OblZrU2ZiZFBZTGJXQ2g1ekl0RnFCNThpSGVsUVhXaEV2UGRKWnZmRm04djZRV3A2TWo3WFNwcXVhN2VqdWRhYTRMZFFkbFg0b0NSMGdCWnA3d2FUMGRaU3JLaE5SSmxtYmM2TnVMb2RuZWhNLUgta0NkQ25uaGRUbEVrMjZXcG1Kcm83Mmt4SlBDcUxGRGs4VllIMTRTVm05ZmRMN2Q0N0ZSeWUzdWVWUk96OER6Tml1WjNVTVJ6Yko2M0dEaW14WndIMTJrNHJ0WlM2clRSanhlamxpajNISk1CaWxxaG5mdnIxdFdlaGJYUXRIcHR3WFY0V2Zycm02ZmF5dVlCUTlfcGw2MGY1a2NEb050c0o5QTdoaFhmOVpUNWdHSnBzQ3RKcTNmODFieVN3MTYtNGZQQ3NZT1B2akN6MWxYQ1U5WVdQOVQtNG5SamlpdV8yX0h4MGswdklaWEc1V2RCTF9vX2FiSDB6R0Y0cllqdkJPOWpBd3h5M0RQYUNWeU1tSUZfQi1wUzl6dm1xVHo3cmY1MHBVZUctbzRITHAtSWlKZE1mMkZ4QmgwWUt5UXhaY2FlR29BLTlxbldzTHZmTzhpOGxrY1pzRzBsZUMtNHFFWFhBekpnMXNXbE5TUlM3WDVmNElYcG50cjIxdnlxU3BMcDNubVZjZ2Q0ejBoM3FzRzFzVTVKNW02azRMTkdVaFJKR2JnVjZ3RFBJTzZ1dEJ3NzMtZ1J1MXg2cWpaRlRyMWl4QllCN194VWU4TkhSS3VpMTk0X1ZHRW5PRDJVbnI3TnNWYUtxMEhmZG4yR1dYaFFvaFQ0RzdlVjFackFkcFQ1aHJMc0RGMk5IdDdJZ1NWYVp1elo2MHhlNUxueHdWYkxKOHpvenMtVGpMdm5EczMtb1RvbHlFRmZwX3hidnNmVkdncDl6T011dTl0Wnd3OElyUHQtaGRpaDMxS1RBeDcwblpEWkJ1cVoxeWZQdmFQSVJOUng2cThINFdfdGRkVXprSUFsUWhVYjM2elU4SnFDTlExYThIUDhaemVudVF3bW5taDluYnR2WUNaTUN2cG9FUmJzRTBPYWpHWFFsTUc5WFBDUVpEUjJuTS1ieTI3Z3hldmdtZm9MX2h3ZHpfQ3VjLXIwaXdMWTVUdTJIYUZpTTh5ZjFLdjRfLVpucVBCNzhsRUI1SVVuN1c3MUdoSURTQ00wS0hWR2wwVzUzN2Zrd0V2SnkzdzdCSlJFQ0lvYnh3aHlla2NBWFkyNUV5aThOUGtVbDl2THA2VTRvZF9kVWRnQVlSeWlSNGo3WGRhcEVPYnJZbmw4d3dXQ0VtNE91V0JxaUg1Nkl3NVl1dFRuUkZURzg3a2x0cXk2Y2xuZnJpeXZqVkpkY1lxWXFENEJoWmMyMnkyQnJaVHd6NTQ4bnhTTF9yN2ROeHFMRmVkOU0zWWZpeS01Q0FBdS1YZFBuWTFNdnZVcG9wVURsWlMwX2JZcVBxRWliaE9TQUk4X0dlUll6NHBJT1NkY1gzMndhcjExRXd1N090aUhYdkVHbkxuSFdjbGUtalFkemV3T2dIbVM2bE1rVWVPZXREZ2k3U2RaQ0g0OTNfTTdBNjRaY3hPYk9hc3lyVjFadk1ob0k2VXcxaUV2OTdUMk1oQ0piaVFsWk5BRjdndHdKQ29ZNEJmeWt4VDY3SUQtVjNwNWsxTDd6ZlcxQUhiajVqMm1TZVVpaFFTS05SWlVDSDZZR2FJRmJlcktzM19RbldqQ2xvd2NqRV96Q1o0VmJmV0NUZzhDVDZxUHFEMEhlM29SOGsxMS1IWXZEQUxfM2VUTmwwbVI4czdzb1duZWg5NGZINTZwd0J2eVFuampLNUlFRzh0TERLYmpZRU50U3R5N1V5eE5BYXhwa1MxdTZLVll0dFJfYTZkZ2kwRG45SE9BQWVVZWloYXE3ZjRKYncwWWUzLTdBcE5sVUhaQnM4c1BWZGhfaVJsT1NEa0lkRjBvZ3d5SXNwMXBPZEtfTlg4YTRNX2JNUGw1bUlqZW9obV9DV01kZDFiRm85dzMtNkdTN0xUSFRKUl82X21IX0NnWm9UOTZ6MVNiVjMzU3dHemxBdEh4eFVMT0hEUVo3MjRuU2pnb0Y5TWtyMEZmU3FnQWpOREVXLTNoaGlMTmhKdVhPelpzeDdWeXc5dmM5bTlyc0FVS1dNZDFlVU1wQXZMbXlOQUg5MGZYdnVyOTEtOWRINzc5dTRxSHJZcDVBZ0hVeHFDM1RVbXBudmpTWEhlSFRmaDVYR2hQa2cudWJWd0dva2JTcEtfdVRzYTNyX2psUQ==" />
+                                <input type="hidden" name="_eventId" value="submit" />
+
+                                <div class="btn-list">
+                                    <button class="btn-submit btn" name="submit" accesskey="C" tabindex="3" type="submit"><u>C</u>onnexion</button>
+                                </div>
+
+                                <div class="field check">
+                                    <input id="warn" name="warn" accesskey="P" type="checkbox" tabindex="4" ><label for="warn"  class="warnLabel checkContent"><u>P</u>révenez-moi avant d'accéder à d'autres services.</label>
+                                    
+
+
+
+<div
+    class="extra-box">
+    <i class="icon-help-circled-1 btn-extra-info" data-info="ac7e18e7-1ba4-4a46-bab2-55b7cb2cf423"></i>
+    <div id="info-ac7e18e7-1ba4-4a46-bab2-55b7cb2cf423" class="extra-info">
+        <button class="close" data-dismiss="alert"><span>Fermer</span><i class="icon-cancel-circled"></i></button>
+        <div class="info-content">
+            <p>Avertissement de redirection</p>
+            <ul><li>Vous serez avertis lorsque vous accédez à un autre service régis par l'Université de Sherbrooke.</li><li>Notez que vous serez avertis en tout temps lorsque vous tenterez d'accéder à un service qui n'est pas régis par l'Université de Sherbrooke.</li></ul>
+        </div>
+    </div>
+</div>
+</div>
+                            </fieldset>
+                        <div>
+</div></form></section>
+
+                    <section class="col2">
+                        <div class="row row1">
+                            <h2>Nouvel utilisateur</h2>
+                            <div class="btn-list">
+                                <a class="btn" accesskey="R" href="http://www.usherbrooke.ca/monacces/nouveau-auto?redirection=http%3A%2F%2Flocalhost%3A3000%2Fbackend%2F&app=localhost" tabindex="5">Me c<u>r</u>éer un compte</a>
+                            </div>
+                        </div>
+
+                        <div class="row row2">
+                            <h2>Dépannage</h2>
+                            <ul>
+                                <li><a tabindex="6" href="http://www.usherbrooke.ca/monacces/mot-de-passe-oubli?redirection=http%3A%2F%2Flocalhost%3A3000%2Fbackend%2F&app=localhost">J'ai oublié mon mot de passe</a></li>
+                                <li><a tabindex="7" href="http://www.usherbrooke.ca/monacces/mot-de-passe-modifier?redirection=http%3A%2F%2Flocalhost%3A3000%2Fbackend%2F&app=localhost">Je désire modifier mon mot de passe</a></li>
+                                <li><a tabindex="8" href="http://www.usherbrooke.ca/monacces/identifiant-oubli?redirection=http%3A%2F%2Flocalhost%3A3000%2Fbackend%2F&app=localhost">Je ne me souviens pas de mon identifiant</a></li>
+                                <li><a tabindex="9" href="http://www.usherbrooke.ca/monacces/question-modifier?redirection=http%3A%2F%2Flocalhost%3A3000%2Fbackend%2F&app=localhost">Je désire modifier ma question secrète</a></li>
+                                <li><a tabindex="10" href="http://www.usherbrooke.ca/info-aide/form/cas/ewoiYXBwIjogImxvY2FsaG9zdCIKLCIuc2VydmljZSI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC9iYWNrZW5kLyIKfQ==" target="_blank">J'ai besoin d'aide</a></li>
+                                <li><a tabindex="11" href="http://www.usherbrooke.ca/monacces">Portail monAccès</a></li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+
+                
+
+
+<p class="note">
+    <strong>Protégez vos données personnelles</strong><br/>
+    Si vous utilisez un ordinateur public ou partagé, assurez-vous de quitter le navigateur à la fin de votre session de travail.
+</p>
+</section>
+        </div>
+    </section>
+    <footer id="footer_inst">
+        <p>Tous droits réservés © Université de Sherbrooke, <br class="address-split"/>2500, boul. de l'Université, Sherbrooke (Québec) CANADA J1K 2R1<a class="block"
+               href="http://www.usherbrooke.ca/accueil/fr/nous-joindre/"
+               target="_blank">
+                Contactez-nous</a><br/>
+        </p>
+    </footer>
+    
+
+
+    <div class="version_footer">Version 14.5.7</div></div>
+</body>
+</html><!DOCTYPE html>
