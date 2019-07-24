@@ -11,6 +11,7 @@ class Sale extends Component {
       .then(res => {
         // eslint-disable-next-line no-console
         console.log("test")
+        // eslint-disable-next-line no-console
         console.log(res.data)
         //const persons = res.data;
         //this.setState({ persons });

@@ -8,7 +8,14 @@ class ProfileInfo extends Component {
     super(props);
     // N’appelez pas `this.setState()` ici !
     this.state = { 
-      firstName : "Guillaume", };
+      firstName : props.firstName,
+      lastName : props.lastName,
+      username : props.username,
+      email : props.email,
+      tel : props.lastName,
+      cell : props.cell,
+      city : props.city
+     };
   }
   render() {
     return (
@@ -16,19 +23,19 @@ class ProfileInfo extends Component {
             <article>
                 <form>
                   <label className="profile-label">Prénom</label>
-                  <input className="profile-input" placeholder={this.props.firstName} defaultValue={"Guillaume"} onChange={e => this.setState({ firstName: e.target.value })}></input>
+                  <input className="profile-input" value={this.props.firstName} onChange={e => this.setState({ firstName: e.target.value })}></input>
                   <label className="profile-label">Nom</label>
-                  <input className="profile-input" placeholder={this.props.lastName} defaultValue={"Auclair"}></input>
+                  <input className="profile-input" value={this.props.lastName}></input>
                   <label className="profile-label">Nom d'utilisateur</label>
-                  <input className="profile-input" placeholder={this.props.username} defaultValue={"Chapeau"}></input>
+                  <input className="profile-input" value={this.props.username}></input>
                   <label className="profile-label">Courriel</label>
-                  <input className="profile-input" placeholder={this.props.email} defaultValue={"guillaume.auclair@usherbrooke.ca"}></input>
+                  <input className="profile-input" value={this.props.email}></input>
                   <label className="profile-label">Téléphone</label>
-                  <input className="profile-input" placeholder={this.props.tel} defaultValue={"418-444-1919"}></input>
+                  <input className="profile-input" value={this.props.tel}></input>
                   <label className="profile-label">Cellulaire</label>
-                  <input className="profile-input" placeholder={this.props.cell} defaultValue={"777-777-7777"}></input>
+                  <input className="profile-input" value={this.props.cell}></input>
                   <label className="profile-label">Ville</label>
-                  <input className="profile-input" placeholder={this.props.city} defaultValue={"Sherbrooke"}></input>
+                  <input className="profile-input" value={this.props.city}></input>
 
                   <button className="profile-apply-button">Appliquer</button>
                   <Link to="/ResetPassword" className="profile-pw-reset">Réinitialiser le mot de passe</Link>
