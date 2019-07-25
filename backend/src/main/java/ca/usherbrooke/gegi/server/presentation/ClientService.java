@@ -21,7 +21,7 @@ public class ClientService {
 
     @GET
     @Path("{id}")
-    @Produces("application/json")
+    @Produces(MediaType.APPLICATION_JSON)
     public List<Client> getClient(@PathParam("id") Integer id) {
 
         //clientMapper.InsertClient(CreateClient());
@@ -35,8 +35,19 @@ public class ClientService {
     @Produces(MediaType.TEXT_PLAIN)
     public Client CreateClient(Client clientJSON){
         Client tempClient = new Client();
-        tempClient.setFirstName("insert FN");
-        tempClient.setLastName("insert LN");
         return tempClient;
     }
+
+    @PUT
+    @Path("{id}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.TEXT_PLAIN)
+    public Client UpdateClient(@PathParam("id") Integer id, Client clientJSON){
+        System.out.print(clientJSON.toString());
+        Client tempClient = new Client();
+        clientMapper.UpdateClient(clientJSON);
+
+        return clientJSON;
+    }
+
 }

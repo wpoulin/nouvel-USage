@@ -12,4 +12,5 @@ public interface ClientMapper {
 
     List<Client> GetClientById(@Param("id") int id);
     void InsertClient(@Param("client") Client client);
+    void UpdateClient(@Param("client") Client client);
 }

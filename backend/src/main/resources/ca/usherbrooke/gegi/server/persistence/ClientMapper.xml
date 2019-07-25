@@ -36,4 +36,18 @@
      #{client.cote_seller});
   </insert>
 
+    <update id = "UpdateClient" parameterType = "Client">
+    UPDATE client set
+     first_name = #{client.first_name},
+     last_name= #{client.last_name},
+     username = #{client.username},
+     email = #{client.email},
+     phone = #{client.phone},
+     cell_phone = #{client.cell_phone},
+     ville = #{client.ville}
+    WHERE
+     id_client = #{client.id_client};
+
+  </update>
+
 </mapper>
