@@ -4,11 +4,14 @@ import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { MessageManagerProvider } from 'react-message-manager';
 
 ReactDOM.render((
-	<BrowserRouter>
-		<App />
-	</BrowserRouter>
+	<MessageManagerProvider desktopView>
+		<BrowserRouter>
+			<App />
+		</BrowserRouter>
+	</MessageManagerProvider>
 ), document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

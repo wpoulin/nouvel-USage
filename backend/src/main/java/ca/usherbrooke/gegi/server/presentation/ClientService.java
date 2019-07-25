@@ -44,7 +44,7 @@ public class ClientService {
     @PUT
     @Path("{id}")
     @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.TEXT_PLAIN)
+    @Produces(MediaType.APPLICATION_JSON)
     public Client UpdateClient(@PathParam("id") Integer id, Client clientJSON){
         System.out.print(clientJSON.toString());
         Client tempClient = new Client();

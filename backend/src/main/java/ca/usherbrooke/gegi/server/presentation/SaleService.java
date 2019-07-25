@@ -32,7 +32,7 @@ public class SaleService {
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.TEXT_PLAIN)
+    @Produces(MediaType.APPLICATION_JSON)
     public Sale CreateSale(Sale saleJSON){
         Sale tempSale = new Sale();
         tempSale.setSaleDescription("insert description");
