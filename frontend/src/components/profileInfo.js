@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import "../assets/profileInfo.css";
 import axios from 'axios';
@@ -9,6 +8,7 @@ class ProfileInfo extends Component {
     super(props);
     // N’appelez pas `this.setState()` ici !
     this.state = {
+        cip: "",
         firstName : "",
         lastName : "",
         username : "",
@@ -23,6 +23,7 @@ class ProfileInfo extends Component {
   // eslint-disable-next-line react/no-deprecated
   componentWillReceiveProps(props){
     this.setState({ 
+        cip : props.cip,
         firstName : props.firstName,
         lastName : props.lastName,
         username : props.username,
@@ -37,6 +38,7 @@ class ProfileInfo extends Component {
     e.preventDefault();
     let user = {
       idClient: 1,
+      cip: this.state.cip,
       firstName: this.state.firstName,
       lastName: this.state.lastName,
       username: this.state.username,
@@ -60,20 +62,22 @@ class ProfileInfo extends Component {
         <div className="profile-component">
             <article>
                 <form>
+                  <label className="profile-label">CIP</label>
+                  <input className="profile-input" type="text" value={this.state.cip} onChange={e => this.setState({ cip: e.target.value })}></input>
                   <label className="profile-label">Prénom</label>
                   <input className="profile-input" type="text" value={this.state.firstName} onChange={e => this.setState({ firstName: e.target.value })}></input>
                   <label className="profile-label">Nom</label>
-                  <input className="profile-input" value={this.state.lastName} onChange={e => this.setState({ lastName: e.target.value })}></input>
+                  <input className="profile-input" type="text" value={this.state.lastName} onChange={e => this.setState({ lastName: e.target.value })}></input>
                   <label className="profile-label">Nom d'utilisateur</label>
-                  <input className="profile-input" value={this.state.username} onChange={e => this.setState({ username: e.target.value })}></input>
+                  <input className="profile-input" type="text" value={this.state.username} onChange={e => this.setState({ username: e.target.value })}></input>
                   <label className="profile-label">Courriel</label>
-                  <input className="profile-input" value={this.state.email} onChange={e => this.setState({ email: e.target.value })}></input>
+                  <input className="profile-input" type="text" value={this.state.email} onChange={e => this.setState({ email: e.target.value })}></input>
                   <label className="profile-label">Téléphone</label>
-                  <input className="profile-input" value={this.state.tel} onChange={e => this.setState({tel: e.target.value })}></input>
+                  <input className="profile-input" type="text" value={this.state.tel} onChange={e => this.setState({tel: e.target.value })}></input>
                   <label className="profile-label">Cellulaire</label>
-                  <input className="profile-input" value={this.state.cell} onChange={e => this.setState({cell: e.target.value })}></input>
+                  <input className="profile-input" type="text" value={this.state.cell} onChange={e => this.setState({cell: e.target.value })}></input>
                   <label className="profile-label">Ville</label>
-                  <input className="profile-input" value={this.state.city} onChange={e => this.setState({ city: e.target.value })}></input>
+                  <input className="profile-input" type="text" value={this.state.city} onChange={e => this.setState({ city: e.target.value })}></input>
 
                   <button className="profile-apply-button" onClick={this.handleClick}>Appliquer</button>
                 </form>
@@ -84,6 +88,7 @@ class ProfileInfo extends Component {
 }
 
 ProfileInfo.propTypes = {
+    cip: PropTypes.string.isRequired,
     firstName: PropTypes.string.isRequired,
     lastName: PropTypes.string.isRequired,
     username: PropTypes.string.isRequired,

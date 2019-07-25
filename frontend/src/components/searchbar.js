@@ -11,10 +11,10 @@ class SearchBar extends Component {
                         <input className="search-input" placeholder="Rechercher..."></input>
                     </div>
                     <div className="search-type-container">
-                        <select className="search-type">
-                            <option selected>Toutes les catégories</option>
-                            <option>Livres</option>
-                            <option>Matériel</option>
+                        <select className="search-type" defaultValue="0">
+                            <option value="0">Toutes les catégories</option>
+                            <option value="1">Livres</option>
+                            <option value="2">Matériel</option>
                         </select>
                     </div>
                 </div>
