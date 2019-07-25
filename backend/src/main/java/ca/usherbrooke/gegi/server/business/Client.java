@@ -1,6 +1,5 @@
 package ca.usherbrooke.gegi.server.business;
 
-
 public class Client {
     private Integer id_client;
     private String first_name;
@@ -12,6 +11,7 @@ public class Client {
     private String cell_phone;
     private String ville;
     private Integer cote_seller;
+    private String cip;
 
     public Integer getIdClient() {
         return id_client;
@@ -65,6 +65,9 @@ public class Client {
     }
     public void setCoteSeller(Integer p_coteSeller) {this.cote_seller = p_coteSeller; }
 
+    public String getCIP() { return cip; }
+    public void setCIP(String p_cip) {this.cip = p_cip; }
+
     @Override
     public String toString() {
         return "User{" +
@@ -78,6 +81,7 @@ public class Client {
                 ", cell_phone='" + cell_phone + '\'' +
                 ", ville='" + ville + '\'' +
                 ", cote_seller='" + cote_seller + '\'' +
+                ", cip='" + cip + '\'' +
                 '}';
     }
 }
