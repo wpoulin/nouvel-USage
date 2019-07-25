@@ -1,5 +1,6 @@
 package ca.usherbrooke.gegi.server.business;
 
+
 public class Client {
     private Integer id_client;
     private String first_name;
@@ -19,9 +20,7 @@ public class Client {
         this.id_client = p_idClient;
     }
 
-    public String getFirstName() {
-        return first_name;
-    }
+    public String getFirstName() { return first_name;}
     public void setFirstName(String firstName) {
         this.first_name = firstName;
     }
@@ -29,7 +28,7 @@ public class Client {
     public String getLastName() {
         return last_name;
     }
-    public void setLastName(String p_firstName) {this.last_name = p_firstName; }
+    public void setLastName(String p_lastName) {this.last_name = p_lastName; }
 
     public String getUsername() {
         return username;

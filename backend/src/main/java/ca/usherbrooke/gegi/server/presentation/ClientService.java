@@ -21,7 +21,7 @@ public class ClientService {
 
     @GET
     @Path("CIP/{cip}")
-    @Produces("application/json")
+    @Produces(MediaType.APPLICATION_JSON)
     public Client getClientByCIP(@PathParam("cip") String cip) {
 
         Client client = clientMapper.GetClientByCIP(cip);
@@ -36,8 +36,21 @@ public class ClientService {
 
     @GET
     @Path("{id}")
-    @Produces("application/json")
+    @Produces(MediaType.APPLICATION_JSON)
     public Client getClientByID(@PathParam("id") Integer id) {
         return clientMapper.GetClientById(id);
     }
+
+    @PUT
+    @Path("{id}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.TEXT_PLAIN)
+    public Client UpdateClient(@PathParam("id") Integer id, Client clientJSON){
+        System.out.print(clientJSON.toString());
+        Client tempClient = new Client();
+        clientMapper.UpdateClient(clientJSON);
+
+        return clientJSON;
+    }
+
 }

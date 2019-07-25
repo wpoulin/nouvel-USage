@@ -39,15 +39,15 @@ class MyProfile extends Component {
 			let user_info = data[0]
 			this.setState({ 
 				firstName: user_info.firstName,
-				lastName: user_info.firstName,
+				lastName: user_info.lastName,
 				username: user_info.username,
 				email: user_info.email,
 				tel: user_info.phone,
-				cell: user_info.cellphone,
+				cell: user_info.cellPhone,
 				city : user_info.ville
 			})
 			// eslint-disable-next-line no-console
-			console.log(this.state)
+			console.log(user_info)
 		})
 	}
 }

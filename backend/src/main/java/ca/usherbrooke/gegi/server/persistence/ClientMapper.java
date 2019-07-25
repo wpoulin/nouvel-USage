@@ -12,4 +12,5 @@ public interface ClientMapper {
     Client GetClientByCIP(@Param("cip") String cip);
     Client GetClientById(@Param("id") int id);
     void CreateClient(@Param("cip") String cip);
+    void UpdateClient(@Param("client") Client client);
 }
