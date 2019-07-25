@@ -9,7 +9,7 @@ import java.util.List;
 @SuppressWarnings("CdiManagedBeanInconsistencyInspection")
 @Mapper
 public interface ClientMapper {
-
-    List<Client> GetClientById(@Param("id") int id);
-    void InsertClient(@Param("client") Client client);
+    Client GetClientByCIP(@Param("cip") String cip);
+    Client GetClientById(@Param("id") int id);
+    void CreateClient(@Param("cip") String cip);
 }

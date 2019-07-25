@@ -20,23 +20,24 @@ public class ClientService {
     @Inject private ClientMapper clientMapper;
 
     @GET
-    @Path("{id}")
+    @Path("CIP/{cip}")
     @Produces("application/json")
-    public List<Client> getClient(@PathParam("id") Integer id) {
+    public Client getClientByCIP(@PathParam("cip") String cip) {
 
-        //clientMapper.InsertClient(CreateClient());
+        Client client = clientMapper.GetClientByCIP(cip);
 
-        List<Client> clients = clientMapper.GetClientById(id);
-        return clients;
+        if (client == null) {
+            clientMapper.CreateClient(cip);
+            client = clientMapper.GetClientByCIP(cip);
+        }
+
+        return client;
     }
 
-    @POST
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.TEXT_PLAIN)
-    public Client CreateClient(Client clientJSON){
-        Client tempClient = new Client();
-        tempClient.setFirstName("insert FN");
-        tempClient.setLastName("insert LN");
-        return tempClient;
+    @GET
+    @Path("{id}")
+    @Produces("application/json")
+    public Client getClientByID(@PathParam("id") Integer id) {
+        return clientMapper.GetClientById(id);
     }
 }
