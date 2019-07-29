@@ -14,7 +14,6 @@ class ProfileInfo extends Component {
         username : "",
         email : "",
         tel : "",
-        cell : "",
         city : ""
     };
     this.handleClick = this.handleClick.bind(this);
@@ -29,32 +28,8 @@ class ProfileInfo extends Component {
         username : props.username,
         email : props.email,
         tel : props.tel,
-        cell : props.cell,
         city : props.city
     })
-  }
-
-  handleClick (e) {
-    e.preventDefault();
-    let user = {
-      idClient: 1,
-      cip: this.state.cip,
-      firstName: this.state.firstName,
-      lastName: this.state.lastName,
-      username: this.state.username,
-      email: this.state.email,
-      phone: this.state.tel,
-      cellPhone: this.state.cell,
-      ville : this.state.city
-    }
-    console.log(user)
-    const url = 'http://localhost:8080/backend/api/client/1'
-    axios.put(url, user).then(response => response.data)
-		.then((data) => {
-
-			// eslint-disable-next-line no-console
-			console.log(data)
-		})
   }
 
   render() {
@@ -74,27 +49,45 @@ class ProfileInfo extends Component {
                   <input className="profile-input" type="text" value={this.state.email} onChange={e => this.setState({ email: e.target.value })}></input>
                   <label className="profile-label">Téléphone</label>
                   <input className="profile-input" type="text" value={this.state.tel} onChange={e => this.setState({tel: e.target.value })}></input>
-                  <label className="profile-label">Cellulaire</label>
-                  <input className="profile-input" type="text" value={this.state.cell} onChange={e => this.setState({cell: e.target.value })}></input>
                   <label className="profile-label">Ville</label>
                   <input className="profile-input" type="text" value={this.state.city} onChange={e => this.setState({ city: e.target.value })}></input>
 
-                  <button className="profile-apply-button" onClick={this.handleClick}>Appliquer</button>
+                  <button className="profile-apply-button" onClick={this.handleUpdateProfileClick}>Appliquer</button>
                 </form>
             </article>
         </div>
     );
   }
+
+  handleClick (e) {
+    e.preventDefault();
+
+    let user = {
+      cip: this.state.cip,
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
+      username: this.state.username,
+      email: this.state.email,
+      phone: this.state.tel,
+      city : this.state.city
+    }
+    
+    const url = 'http://localhost:8080/backend/api/user'
+    axios.put(url, user).then(response => response.data)
+		.then((data) => {
+			// eslint-disable-next-line no-console
+			console.log(data)
+		})
+  }
 }
 
 ProfileInfo.propTypes = {
     cip: PropTypes.string.isRequired,
-    firstName: PropTypes.string.isRequired,
-    lastName: PropTypes.string.isRequired,
-    username: PropTypes.string.isRequired,
-    email: PropTypes.string.isRequired,
+    firstName: PropTypes.string,
+    lastName: PropTypes.string,
+    username: PropTypes.string,
+    email: PropTypes.string,
     tel: PropTypes.string,
-    cell: PropTypes.string,
     city: PropTypes.string
   };
 

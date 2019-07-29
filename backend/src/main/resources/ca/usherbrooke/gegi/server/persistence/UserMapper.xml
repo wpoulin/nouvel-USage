@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ca.usherbrooke.gegi.server.persistence.UserMapper">
+
+    <select id="GetUserByCIP" parameterType="String" resultType="User">
+        SELECT
+            cip,
+            first_name,
+            last_name,
+            username,
+            email,
+            phone,
+            city
+        FROM
+            users
+        WHERE
+            cip = #{cip}
+        LIMIT 1
+    </select>
+
+    <insert id="CreateUser" parameterType="String">
+        INSERT INTO users (cip)
+        VALUES (#{cip})
+    </insert>
+
+    <update id = "UpdateUser" parameterType = "User">
+        UPDATE users set
+            first_name = #{user.first_name},
+            last_name= #{user.last_name},
+            username = #{user.username},
+            email = #{user.email},
+            phone = #{user.phone},
+            city = #{user.city}
+        WHERE
+            cip = #{user.cip};
+    </update>
+
+</mapper>

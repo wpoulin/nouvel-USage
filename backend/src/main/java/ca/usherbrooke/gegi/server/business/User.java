@@ -1,24 +1,17 @@
 package ca.usherbrooke.gegi.server.business;
 
-public class Client {
-    private Integer id_client;
+public class User {
+    private String cip;
     private String first_name;
     private String last_name;
     private String username;
     private String password;
     private String email;
     private String phone;
-    private String cell_phone;
-    private String ville;
-    private Integer cote_seller;
-    private String cip;
+    private String city;
 
-    public Integer getIdClient() {
-        return id_client;
-    }
-    public void setIdClient(Integer p_idClient) {
-        this.id_client = p_idClient;
-    }
+    public String getCIP() { return cip; }
+    public void setCIP(String p_cip) {this.cip = p_cip; }
 
     public String getFirstName() { return first_name;}
     public void setFirstName(String firstName) {
@@ -50,38 +43,22 @@ public class Client {
     }
     public void setPhone(String p_phone) {this.phone = p_phone; }
 
-    public String getCellPhone() {
-        return cell_phone;
+    public String getCity() {
+        return city;
     }
-    public void setCellPhone(String p_cellPhone) {this.cell_phone = p_cellPhone; }
-
-    public String getVille() {
-        return ville;
-    }
-    public void setVille(String p_ville) {this.ville = p_ville; }
-
-    public Integer getCoteSeller() {
-        return cote_seller;
-    }
-    public void setCoteSeller(Integer p_coteSeller) {this.cote_seller = p_coteSeller; }
-
-    public String getCIP() { return cip; }
-    public void setCIP(String p_cip) {this.cip = p_cip; }
+    public void setCity(String p_city) {this.city = p_city; }
 
     @Override
     public String toString() {
         return "User{" +
-                "id_client=" + id_client +
+                "cip='" + cip + '\'' +
                 ", first_name='" + first_name + '\'' +
                 ", last_name='" + last_name + '\'' +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
-                ", cell_phone='" + cell_phone + '\'' +
-                ", ville='" + ville + '\'' +
-                ", cote_seller='" + cote_seller + '\'' +
-                ", cip='" + cip + '\'' +
+                ", city='" + city + '\'' +
                 '}';
     }
 }

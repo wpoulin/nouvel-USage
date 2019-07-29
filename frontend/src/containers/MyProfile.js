@@ -13,10 +13,10 @@ class MyProfile extends Component {
 			username : "",
 			email : "",
 			tel : "",
-			cell : "",
 			city : ""
 		};
 	}
+	
 	render () {
 		return (
 			<div>
@@ -27,15 +27,15 @@ class MyProfile extends Component {
 				username={this.state.username}
 				email={this.state.email}
 				tel={this.state.tel}
-				cell={this.state.cell}
 				city={this.state.city}
 				/>
 			</div>
 		);
 	}
 	componentDidMount() {
-		const url = 'http://localhost:8080/backend/api/client/1'
-		axios.get(url).then(response => response.data)
+		let cip = 'test1234';
+		const url = 'http://localhost:8080/backend/api/user';
+		axios.get(url + '?cip=' + cip).then(response => response.data)
 		.then((data) => {
 			let user_info = data
 
@@ -47,8 +47,7 @@ class MyProfile extends Component {
 					username: user_info.username,
 					email: user_info.email,
 					tel: user_info.phone,
-					cell: user_info.cellPhone,
-					city : user_info.ville
+					city : user_info.city
 				})
 			}
 		})

@@ -7,8 +7,6 @@ import { injectMessageManager } from 'react-message-manager';
 import LoadingOverlay from 'react-loading-overlay';
 import Select from 'react-select'
 import DatePicker from 'react-date-picker'
-import { Textbox } from 'react-inputs-validation';
-
 
 class NewSaleInfo extends Component {
   constructor(props) {
