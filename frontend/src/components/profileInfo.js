@@ -52,7 +52,7 @@ class ProfileInfo extends Component {
                   <label className="profile-label">Ville</label>
                   <input className="profile-input" type="text" value={this.state.city} onChange={e => this.setState({ city: e.target.value })}></input>
 
-                  <button className="profile-apply-button" onClick={this.handleUpdateProfileClick}>Appliquer</button>
+                  <button className="profile-apply-button" onClick={this.handleClick}>Appliquer</button>
                 </form>
             </article>
         </div>
@@ -72,12 +72,12 @@ class ProfileInfo extends Component {
       city : this.state.city
     }
     
-    const url = 'http://localhost:8080/backend/api/user'
+    const url = 'http://localhost:8080/backend/api/user';
     axios.put(url, user).then(response => response.data)
 		.then((data) => {
 			// eslint-disable-next-line no-console
-			console.log(data)
-		})
+			//console.log(data)
+		});
   }
 }
 

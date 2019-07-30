@@ -10,10 +10,11 @@ public class Article {
     private String title;
     private String description;
     private DateTimeFormatter creation_date;
-    private String price;
+    private Double price;
     private Integer wear;
     private Boolean nego;
     private String location;
+    private String image_src;
 
     public Integer getId() {
         return id_article;
@@ -62,10 +63,10 @@ public class Article {
         this.creation_date = p_creationdate;
     }
 
-    public String getPrice() {
+    public Double getPrice() {
         return price;
     }
-    public void setPrice(String p_price) {
+    public void setPrice(Double p_price) {
         this.price = p_price;
     }
 
@@ -84,6 +85,11 @@ public class Article {
     }
     public void setLocation(String p_location) { this.location = p_location; }
 
+    public String getImageSrc() {
+        return image_src;
+    }
+    public void setImageSrc(String p_imageSrc) { this.image_src = p_imageSrc; }
+
     @Override
     public String toString() {
         return "Article{" +
@@ -98,6 +104,7 @@ public class Article {
                 ", wear='" + wear + '\'' +
                 ", nego='" + nego + '\'' +
                 ", location='" + location + '\'' +
+                ", image_src='" + image_src + '\'' +
                 '}';
     }
 }

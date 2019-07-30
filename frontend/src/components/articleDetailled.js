@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import "../assets/sale.css";
 import axios from 'axios';
 
-class Sale extends Component {
+class ArticleDetailled extends Component {
 
   componentDidMount() {
     // eslint-disable-next-line no-console
@@ -56,7 +56,7 @@ class Sale extends Component {
   }
 }
 
-Sale.propTypes = {
+ArticleDetailled.propTypes = {
   title : PropTypes.string.isRequired,
   description : PropTypes.element,
   location : PropTypes.string,
@@ -69,4 +69,4 @@ Sale.propTypes = {
   imgsources : PropTypes.arrayOf(PropTypes.string)
 };
 
-export default Sale;
+export default ArticleDetailled;

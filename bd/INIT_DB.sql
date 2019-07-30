@@ -44,6 +44,7 @@ create table ARTICLES (
    WEAR                 INT4                 null,
    NEGO                 BOOL                 null,
    LOCATION             VARCHAR(50)          null,
+   IMAGE_SRC			VARCHAR(500)		 null,
    constraint PK_ARTICLES primary key (ID_ARTICLE)
 );
 
@@ -63,16 +64,6 @@ create table TAGS (
    ID_TAG               SERIAL               not null,
    NAME             	VARCHAR(50)          null,
    constraint PK_TAGS primary key (ID_TAG)
-);
-
-/*==============================================================*/
-/* Table: IMAGES                                                */
-/*==============================================================*/
-create table IMAGES (
-   ID_IMAGE             SERIAL               not null,
-   ID_ARTICLE           INT4                 not null,
-   LINK                 VARCHAR(500)         not null,
-   constraint PK_IMAGES primary key (ID_IMAGE)
 );
 
 /*==============================================================*/
@@ -106,11 +97,6 @@ alter table ARTICLE_TAGS
 
 alter table ARTICLE_TAGS
    add constraint FK_ARTICLE_TAGS_ARTICLE foreign key (ID_ARTICLE)
-      references ARTICLES (ID_ARTICLE)
-      on delete restrict on update restrict;
-
-alter table IMAGES
-   add constraint FK_IMAGES_ARTICLE foreign key (ID_ARTICLE)
       references ARTICLES (ID_ARTICLE)
       on delete restrict on update restrict;
 

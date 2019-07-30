@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+import java.util.List;
 
 @Path("/article")
 public class ArticleService {
@@ -16,6 +17,13 @@ public class ArticleService {
     HttpServletRequest httpServletRequest;
 
     @Inject private ArticleMapper articleMapper;
+
+    @GET
+    @Path("list")
+    @Produces("application/json")
+    public List<Article> getArticlesFiltered(@QueryParam("filter") String filter) {
+        return articleMapper.GetArticlesFiltered(filter);
+    }
 
     @GET
     @Path("")

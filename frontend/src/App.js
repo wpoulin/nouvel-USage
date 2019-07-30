@@ -6,8 +6,7 @@ import Home from "./containers/Home";
 import ViewArticle from './containers/ViewArticle';
 import NotFound from './containers/NotFound';
 import MyProfile from './containers/MyProfile';
-import MySales from './containers/MySales';
-import AddSale from './containers/AddSale';
+import AddArticle from './containers/AddArticle';
 import Login from './containers/Login';
 
 class App extends Component {
@@ -27,8 +26,7 @@ class App extends Component {
             <Route path="/backend" component={Home} />
             <Route path="/ViewArticle/:id" component={ViewArticle} />
             <Route path="/MyProfile" component={MyProfile} />
-            <Route path="/MySales" component={MySales} />
-            <Route path="/AddSale" component={AddSale} />
+            <Route path="/AddArticle" component={AddArticle} />
             <Route component={NotFound} />
           </Switch>
         </div>

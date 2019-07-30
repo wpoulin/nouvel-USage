@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import "../assets/newSaleInfo.css";
+import "../assets/newArticleInfo.css";
 import axios from 'axios';
 import FileBase64 from 'react-file-base64';
 import { injectMessageManager } from 'react-message-manager';
@@ -8,12 +8,10 @@ import LoadingOverlay from 'react-loading-overlay';
 import Select from 'react-select'
 import DatePicker from 'react-date-picker'
 
-class NewSaleInfo extends Component {
+class NewArticleInfo extends Component {
   constructor(props) {
     super(props);
     // N’appelez pas `this.setState()` ici !
-
-    
 
     this.state = {
       options: [
@@ -55,7 +53,6 @@ class NewSaleInfo extends Component {
     this.loading = this.loading.bind(this);
     this.validateFields = this.validateFields.bind(this);
   };
-
 
   showError = (message) => {
     const { messageManager } = this.props;
@@ -108,9 +105,9 @@ class NewSaleInfo extends Component {
 
       axios.post(url, {image}, { headers: {Authorization: "Client-ID " + "546c25a59c58ad7"}}).then(response => response.data)
       .then((data) => {
-        const url = 'http://localhost:8080/backend/api/sale'
+        const url = 'http://localhost:8080/backend/api/article'
         let image_url = data.data.link
-        let sale = {
+        let article = {
           idClient: 1,
           Name: this.state.Name,
           Description: this.state.Description,
@@ -119,7 +116,7 @@ class NewSaleInfo extends Component {
           Tag: this.state.Tag,
           Image: image_url
         }
-        axios.post(url, sale).then((data) => {
+        axios.post(url, article).then((data) => {
           this.showSuccess("Votre annonce à été enregistré")
         }).catch(error =>{
           this.showError(error)
@@ -164,7 +161,7 @@ class NewSaleInfo extends Component {
   }
 }
 
-NewSaleInfo.propTypes = {
+NewArticleInfo.propTypes = {
     Name: PropTypes.string.isRequired,
     Description: PropTypes.string.isRequired,
     Price: PropTypes.string.isRequired,
@@ -174,4 +171,4 @@ NewSaleInfo.propTypes = {
     Image: PropTypes.string
   };
 
-export default  injectMessageManager(NewSaleInfo);
+export default  injectMessageManager(NewArticleInfo);

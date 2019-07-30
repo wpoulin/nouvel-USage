@@ -36,6 +36,7 @@ public class UserService {
     @Produces(MediaType.APPLICATION_JSON)
     public User UpdateClient(User userJSON){
         userMapper.UpdateUser(userJSON);
+        System.out.println(userJSON);
         return userJSON;
     }
 }

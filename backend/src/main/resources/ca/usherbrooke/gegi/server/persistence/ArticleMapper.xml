@@ -4,6 +4,24 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="ca.usherbrooke.gegi.server.persistence.ArticleMapper">
 
+    <select id="GetArticlesFiltered" parameterType="String" resultType="Article">
+        SELECT
+            id_article,
+            id_category,
+            cip_user,
+            id_status,
+            title,
+            description,
+            creation_date,
+            price,
+            wear,
+            nego,
+            location,
+            image_src
+        FROM
+            articles
+    </select>
+
     <select id="GetArticleById" parameterType='int' resultType="Article">
         SELECT
             id_article,
@@ -16,7 +34,8 @@
             price,
             wear,
             nego,
-            location
+            location,
+            image_src
         FROM
             articles
         WHERE
@@ -36,7 +55,8 @@
             #{article.price},
             #{article.wear},
             #{article.nego},
-            #{article.location});
+            #{article.location},
+            #{article.image_src});
     </insert>
 
 </mapper>
