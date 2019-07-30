@@ -1,24 +1,88 @@
 import React, { Component } from "react";
 import ArticleDetailled from "../components/articleDetailled";
+import axios from 'axios';
 
 class ViewArticle extends Component {
-  render () {
-    //const { params } = this.props.match;
+
+  constructor(props) {
+    super (props);
+
+    this.state = {
+      loading: true
+    };
+  }
+
+	componentDidMount() {
+    const { params } = this.props.match;
     // Use params.id to get articleId 
+
+		const url = 'http://localhost:8080/backend/api/article?id=' + params.id;
+		axios.get(url).then(response => response.data)
+		.then((data) => {
+			let article = data;
+	
+			if (article) {
+				console.log(article);
+				this.setState({ 
+					title: article.title,
+					description: article.description,
+					location: article.location,
+					imageSrc: article.imageSrc,
+					price: article.price,
+					nego: article.nego,
+					wear: article.wear,
+					cip: article.userCIP,
+					date: article.creationDate,
+					loading: false
+				});
+			}
+
+			const userInfoUrl = 'http://localhost:8080/backend/api/user?cip=' + article.userCIP;
+			axios.get(userInfoUrl).then(response => response.data)
+			.then((data) => {
+				let userInfo = data;
+		
+				if (userInfo) {
+					console.log(userInfo);
+					this.setState({ 
+						firstName: userInfo.firstName,
+						lastName: userInfo.lastName,
+						username: userInfo.username,
+						email: userInfo.email,
+						phone: userInfo.phone
+					});
+				}
+			})
+			.catch(function(error) {
+				console.log(error);
+			});
+		})
+		.catch(function(error) {
+			console.log(error);
+		});
+	}
+
+  render () {
 
     return (
       <div className="ViewArticle">
         <ArticleDetailled 
-					title={"Clean code"}
-					description={<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>}
-					location={"Sherbrooke"}
-					price={19.99}
-					announcer={"Jon Snow"}
-					nego={true}
-					wear={9}
-					date={"2019-06-15"}
-					tags={["S5","Coding"]}
-					imgsources={["https://images-na.ssl-images-amazon.com/images/I/5154eSTKUxL._SX382_BO1,204,203,200_.jpg","https://images-na.ssl-images-amazon.com/images/I/5154eSTKUxL._SX382_BO1,204,203,200_.jpg","https://images-na.ssl-images-amazon.com/images/I/5154eSTKUxL._SX382_BO1,204,203,200_.jpg","https://images-na.ssl-images-amazon.com/images/I/5154eSTKUxL._SX382_BO1,204,203,200_.jpg"]}
+					title={this.state.title}
+					description={this.state.description}
+					location={this.state.location}
+					price={this.state.price}
+					cip={this.state.cip}
+					nego={this.state.nego}
+					wear={this.state.wear}
+					date={this.state.date}
+					tags={["Maitrise","Doctorat"]}
+					imgsource={this.state.imageSrc}
+
+					firstName={this.state.firstName}
+					lastName={this.state.lastName}
+					username={this.state.username}
+					email={this.state.email}
+					phone={this.state.phone}
         />
       </div>
     );

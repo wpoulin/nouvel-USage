@@ -36,8 +36,8 @@ li.profile-dropdown {
 li a {
   display: block;
   padding: 14px 16px;
-  text-decoration: none;
-  color: #fff;
+  text-decoration: none !important;
+  color: #fff !important;
 }
 
 .profile-dropdown-button {

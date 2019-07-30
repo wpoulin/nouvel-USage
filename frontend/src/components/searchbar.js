@@ -1,7 +1,20 @@
 import React, { Component } from "react";
 import "../assets/searchbar.css";
+import Select from 'react-select'
 
 class SearchBar extends Component {
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			options: [
+				{ value: "0", label: "Toutes les catégories" },
+				{ value: "1", label: "Livres" },
+				{ value: "2", label: "Matériel" }
+			]
+		};
+	}
+
   render() {
     return (
         <nav className="search-bar-container">
@@ -11,11 +24,7 @@ class SearchBar extends Component {
                         <input className="search-input" placeholder="Rechercher..."></input>
                     </div>
                     <div className="search-type-container">
-                        <select className="search-type" defaultValue="0">
-                            <option value="0">Toutes les catégories</option>
-                            <option value="1">Livres</option>
-                            <option value="2">Matériel</option>
-                        </select>
+                        <Select options={this.state.options} defaultValue={this.state.options[0]}></Select>
                     </div>
                 </div>
                 <div className="search-button-container">

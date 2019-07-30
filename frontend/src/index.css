@@ -20,25 +20,15 @@ code {
   margin: auto;
 }
 
-select {
-  -moz-appearance: none;
-  -ms-appearance: none;
-  appearance: none;
-}
-
-select::-ms-expand {
-  display: none;
-}
-
 button {
-	background: #00a758;
-	color: #fff;
-	border-radius: 5px;
-	border: none;
+	background: #00a758 !important;
+	color: #fff !important;
+	border-radius: 5px !important;
+	border: none !important;
 	padding: 4px 8px;
-	cursor: pointer;
+	cursor: pointer !important;
 }
 
 button:hover {
-	background-color: #016735;
+	background-color: #016735 !important;
 }
