@@ -5,7 +5,7 @@ class AddArticle extends Component {
 	render () {
 		return (
 			<div className="add-sale">
-				<h1>Créer ou modifier une annonce</h1>
+				<h1>Créer une annonce</h1>
 				<NewArticleInfo 
 				/>
 			</div>

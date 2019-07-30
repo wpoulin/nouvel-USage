@@ -1,28 +1,18 @@
 package ca.usherbrooke.gegi.server.business;
 
-import java.time.format.DateTimeFormatter;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Article {
-    private Integer id_article;
+public class NewArticleRequest {
     private Integer id_category;
-    private String cip_user;
-    private Integer id_status;
+    private String cip;
     private String title;
     private String description;
-    private DateTimeFormatter creation_date;
     private Double price;
     private Integer wear;
     private Boolean nego;
-    private String location;
     private String image_src;
 
-    public Integer getId() {
-        return id_article;
-    }
-    public void setId(Integer p_id_article) {
-        this.id_article = p_id_article;
-    }
-
+    @JsonProperty("id_category")
     public Integer getIdCategory() {
         return id_category;
     }
@@ -30,23 +20,21 @@ public class Article {
         this.id_category = p_idCategory;
     }
 
-    public String getUserCIP() {
-        return cip_user;
+    @JsonProperty("cip")
+    public String getCIP() {
+        return cip;
     }
-    public void setUserCIP(String p_cip_user) {
-        this.cip_user = p_cip_user;
-    }
-
-    public Integer getIdStatus() { return id_status; }
-    public void setIdStatus(Integer p_id_status) {
-        this.id_status = p_id_status;
+    public void setCIP(String p_cip) {
+        this.cip = p_cip;
     }
 
+    @JsonProperty("title")
     public String getTitle() {
         return title;
     }
     public void setTitle(String p_title) { this.title = p_title; }
 
+    @JsonProperty("description")
     public String getDescription() {
         return description;
     }
@@ -54,13 +42,7 @@ public class Article {
         this.description = p_description;
     }
 
-    public DateTimeFormatter getCreationDate() {
-        return creation_date;
-    }
-    public void setDate(DateTimeFormatter p_creationdate) {
-        this.creation_date = p_creationdate;
-    }
-
+    @JsonProperty("price")
     public Double getPrice() {
         return price;
     }
@@ -68,21 +50,19 @@ public class Article {
         this.price = p_price;
     }
 
+    @JsonProperty("wear")
     public Integer getWear() {
         return wear;
     }
     public void setWear(Integer p_wear) { this.wear = p_wear; }
 
+    @JsonProperty("nego")
     public Boolean getNego() {
         return nego;
     }
     public void setNego(Boolean p_nego) { this.nego = p_nego; }
 
-    public String getLocation() {
-        return location;
-    }
-    public void setLocation(String p_location) { this.location = p_location; }
-
+    @JsonProperty("image_src")
     public String getImageSrc() {
         return image_src;
     }
@@ -90,18 +70,14 @@ public class Article {
 
     @Override
     public String toString() {
-        return "Article{" +
-                "id_article=" + id_article +
-                ", id_category='" + id_category + '\'' +
-                ", cip_user='" + cip_user + '\'' +
-                ", id_status='" + id_status + '\'' +
+        return "NewArticleRequest{" +
+                "id_category='" + id_category + '\'' +
+                ", cip='" + cip + '\'' +
                 ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
-                ", creation_date='" + creation_date + '\'' +
                 ", price='" + price + '\'' +
                 ", wear='" + wear + '\'' +
                 ", nego='" + nego + '\'' +
-                ", location='" + location + '\'' +
                 ", image_src='" + image_src + '\'' +
                 '}';
     }

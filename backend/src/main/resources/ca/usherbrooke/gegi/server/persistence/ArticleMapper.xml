@@ -44,18 +44,18 @@
 
     <insert id = "InsertArticle" parameterType="Article">
         INSERT INTO articles
-            (id_category, cip_user, id_status, sale_title, sale_description, sale_date, sale_price, sale_wear, sale_nego, sale_location)
+            (id_category, cip_user, id_status, title, description, creation_date, price, wear, nego, location, image_src)
         VALUES
-            (#{sale.id_category},
-            #{article.cip_user},
-            #{article.id_status},
+            (#{article.id_category},
+            #{article.cip},
+            1,
             #{article.title},
             #{article.description},
-            #{article.creation_date},
+            (SELECT NOW()::Date),
             #{article.price},
             #{article.wear},
             #{article.nego},
-            #{article.location},
+            (SELECT CITY FROM USERS WHERE CIP = #{article.cip}),
             #{article.image_src});
     </insert>
 
