@@ -6,6 +6,8 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { MessageManagerProvider } from 'react-message-manager';
 
+localStorage.setItem('isAuthenticated', false)
+
 ReactDOM.render((
 	<MessageManagerProvider desktopView>
 		<BrowserRouter>

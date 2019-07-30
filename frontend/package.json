@@ -5,6 +5,7 @@
   "private": true,
   "dependencies": {
     "@material-ui/icons": "^4.0.1",
+    "@noveogroup/cas": "^1.0.0",
     "axios": "^0.19.0",
     "bootstrap": "^4.3.1",
     "react": "^16.8.6",
