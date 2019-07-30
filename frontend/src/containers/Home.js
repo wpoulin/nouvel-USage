@@ -19,7 +19,7 @@ class Home extends Component {
 			<div className="home">
 				<div className="articleList">
 					{this.state.articles.map((e,i) => (
-						<Link to={"/ViewArticle/1" + e.idArticle} key={i}>
+						<Link to={"/ViewArticle/" + e.id} key={i}>
 							<Article
 								title={e.title}
 								src={e.imageSrc}

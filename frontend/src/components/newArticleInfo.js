@@ -115,7 +115,7 @@ class NewArticleInfo extends Component {
       this.loading(true)
       let image = this.state.imageSrc.base64.replace('data:image/png;base64,','').replace('data:image/jpeg;base64,','');
 
-      axios.post(url, {image}, { headers: {Authorization: "Client-ID " + "546c25a59c58ad7"}}).then(response => response.data)
+      axios.post(url, {image}, { headers: {Authorization: "Client-ID 546c25a59c58ad7"}}).then(response => response.data)
       .then((data) => {
         const url = 'http://localhost:8080/backend/api/article'
         let image_url = data.data.link
