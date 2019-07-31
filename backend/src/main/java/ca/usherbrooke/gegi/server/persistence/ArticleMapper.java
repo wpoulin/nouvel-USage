@@ -15,4 +15,5 @@ public interface ArticleMapper {
     Article GetArticleById(@Param("id") int id);
     void InsertArticle(@Param("article") NewArticleRequest article);
     void DeleteArticle(@Param("id") int id);
+    void UpdateArticle(@Param("article") NewArticleRequest article);
 }

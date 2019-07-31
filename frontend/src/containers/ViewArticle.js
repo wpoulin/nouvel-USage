@@ -34,6 +34,7 @@ class ViewArticle extends Component {
 					wear: article.wear,
 					cip: article.userCIP,
 					date: article.creationDate,
+					idCategory: article.idCategory,
 					loading: false
 				});
 			}
@@ -78,7 +79,7 @@ class ViewArticle extends Component {
 					date={this.state.date}
 					tags={["Maitrise","Doctorat"]}
 					imgsource={this.state.imageSrc}
-
+					idCategory={this.state.idCategory}
 					firstName={this.state.firstName}
 					lastName={this.state.lastName}
 					username={this.state.username}

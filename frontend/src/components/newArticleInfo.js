@@ -80,7 +80,7 @@ class NewArticleInfo extends Component {
   }
 
   validateFields = () => {
-    let completed = this.state.title && this.state.description && this.state.price && this.state.wear && this.state.nego && this.state.categories
+    let completed = this.state.title && this.state.description && this.state.price && this.state.wear && this.state.categories
     return(completed)
   }
 

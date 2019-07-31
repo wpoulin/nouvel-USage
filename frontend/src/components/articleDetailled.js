@@ -11,6 +11,8 @@ class ArticleDetailled extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      imageIsThere: false,
+      updatedWithoutError: false,
       title: "",
       description: "",
       imageSrc: "",
@@ -22,6 +24,7 @@ class ArticleDetailled extends Component {
       ]
     };
     this.handleDelete = this.handleDelete.bind(this);
+    this.handleUpdate = this.handleUpdate.bind(this);
   }
   componentWillReceiveProps(props){
     this.setState({ 
@@ -35,7 +38,13 @@ class ArticleDetailled extends Component {
   // Callback~
   getFiles(imgsource){
     this.setState({ imgsource: imgsource.base64 })
+    this.setState({ imageIsThere: true })
   };
+
+  validateFields = () => {
+    let completed = this.state.title && this.state.description && this.state.price
+    return(completed)
+  }
 
   handleDelete (e) {
     e.preventDefault();
@@ -45,12 +54,78 @@ class ArticleDetailled extends Component {
       this.showSuccess("Votre annonce à été supprimée")
     });
   }
+
+  handleUpdate (e) {
+    e.preventDefault();
+    const imgurUrl = 'https://api.imgur.com/3/upload'
+    
+    
+    if(this.validateFields()) { 
+      
+      let image = this.state.imageIsThere ?
+      this.state.imgsource.replace('data:image/png;base64,','').replace('data:image/jpeg;base64,','') :
+      this.props.imgsource.replace('data:image/png;base64,','').replace('data:image/jpeg;base64,','');
+
+      axios.post(imgurUrl, {image}, { headers: {Authorization: "Client-ID 546c25a59c58ad7"}}).then(response => response.data)
+      .then((data) => {
+        const url = 'http://localhost:8080/backend/api/article'
+        let image_url = data.data.link
+        /*let chosenTags = [];
+        for (var i = 0, l = this.state.tags.length; i < l; i++) {
+          chosenTags.push(this.state.tags[i].value);
+        }*/
+        let newArticle = {
+          id_category: this.props.idCategory,
+          cip: this.props.cip,
+          title: this.state.title,
+          description: this.state.description,
+          price: this.state.price,
+          wear: this.props.wear,
+          nego: this.state.nego.value,
+          //tags: chosenTags,
+          image_src: image_url
+        }
+        console.log(newArticle);
+        axios.post(url, newArticle).then((data) => {
+          this.showSuccess("Votre annonce à été modifié")
+          this.setState({'updatedWithoutError': true})
+          this.props.title = this.state.title
+          this.props.nego = this.state.nego
+          this.props.price = this.state.price
+          this.props.description = this.state.description
+          this.props.image = this.state.image
+          
+        }).catch(error =>{
+          this.showError(error)
+        })
+      }).catch(error =>{
+        this.showError(error)
+      }).then(() => {
+        if(this.state.updatedWithoutError) {
+          const url = 'http://localhost:8080/backend/api/article';
+          axios.delete(url + '?id=' + this.props.id).then(response => response.data)
+          this.setState({'updatedWithoutError': true})
+        }
+
+      })
+    } else { this.showError('Des champs requis sont manquants') }
+
+
+  }
+
+
   handleChangeNego = nego => {
     this.setState({ nego });
   };
   showSuccess = (message) => {
     const { messageManager } = this.props;
     messageManager.showSuccessMessage('Succès: ' + message, {
+      displayTime: 5000, //defaults to 2000
+    });
+  };
+  showError = (message) => {
+    const { messageManager } = this.props;
+    messageManager.showErrorMessage('Erreur: ' + message , {
       displayTime: 5000, //defaults to 2000
     });
   };
@@ -116,7 +191,7 @@ class ArticleDetailled extends Component {
           />
           { 
             this.props.cip === localStorage.getItem('cip') 
-            ? <button onClick={this.handleDelete} className="sale-update-button">Mettre-à-jour</button>
+            ? <button onClick={this.handleUpdate} className="sale-update-button">Mettre-à-jour</button>
             : <div/>
           }
         </aside>
