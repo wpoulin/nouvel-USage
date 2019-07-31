@@ -74,7 +74,7 @@ class ProfileInfo extends Component {
     
     const url = 'http://localhost:8080/backend/api/user';
     axios.put(url, user).then(response => response.data)
-		.then((data) => {
+		.then(() => {
 			// eslint-disable-next-line no-console
 			//console.log(data)
 		});

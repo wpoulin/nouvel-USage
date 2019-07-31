@@ -1,14 +1,5 @@
 import React, { Component } from "react";
-import LoginComponent from "../components/loginComponent";
-import CAS from '@noveogroup/cas';
 import axios from "axios";
-import { withRouter } from "react-router";
-
-var cas = new CAS({
-	base_url: 'https://cas.usherbrooke.ca', 
-	service: 'http://localhost:3000/login',
-	version: 2.0
-});
 
 class Login extends Component {
 	constructor(props) {
@@ -16,8 +7,10 @@ class Login extends Component {
 	}
 
 	componentDidMount() {
+		// eslint-disable-next-line react/prop-types
 		let ticket = this.props.location.search.replace("?ticket=", "")
 		if (localStorage.getItem('isAuthenticated') === 'true') {
+			// eslint-disable-next-line no-console
 			console.log("AlreadyAuthenticated")
 		}
 		else if (ticket) {
@@ -35,7 +28,8 @@ class Login extends Component {
 					localStorage.setItem('isAuthenticated', true)
 
 				} else {
-					window.location.href = '/cas'; 
+					// eslint-disable-next-line react/prop-types
+					this.props.history.push('/cas'); 
 				}
 			}).then(() => {
 				let needCreate = false
@@ -61,20 +55,19 @@ class Login extends Component {
 						}
 						const url = 'http://localhost:8080/backend/api/user';
 						axios.put(url, user).then(response => response.data)
-							.then((data) => {
+							.then(() => {
 								// eslint-disable-next-line no-console
 								//console.log(data)
 							});
 					}
+					// eslint-disable-next-line react/prop-types
 					this.props.history.push('/')
 				})
 			});
 		} else {
-			window.location.href = '/cas'; 
+			// eslint-disable-next-line react/prop-types
+			this.props.history.push('/cas'); 
 		}
-
-
-		console.log(this.context);
 	}
 
 	render () {

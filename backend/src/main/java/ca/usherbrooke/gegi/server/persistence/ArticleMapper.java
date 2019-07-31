@@ -11,7 +11,8 @@ import java.util.List;
 @Mapper
 public interface ArticleMapper {
 
-    List<Article> GetArticlesFiltered(@Param("filter") String filter);
+    List<Article> GetArticlesFiltered(@Param("id_category") Integer id_category, @Param("filter") String filter);
     Article GetArticleById(@Param("id") int id);
     void InsertArticle(@Param("article") NewArticleRequest article);
+    void DeleteArticle(@Param("id") int id);
 }

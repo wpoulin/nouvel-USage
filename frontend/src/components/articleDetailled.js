@@ -2,11 +2,29 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import "../assets/sale.css";
 import { Button, Popup } from 'semantic-ui-react';
+import axios from 'axios'
+import { injectMessageManager } from 'react-message-manager';
 
 class ArticleDetailled extends Component {
-
+  constructor(props) {
+    super(props);
+    this.handleDelete = this.handleDelete.bind(this);
+  }
+  handleDelete (e) {
+    e.preventDefault();
+    const url = 'http://localhost:8080/backend/api/article';
+    axios.delete(url + '?id=' + this.props.id).then(response => response.data)
+		.then(() => {
+      this.showSuccess("Votre annonce à été supprimée")
+    });
+  }
+  showSuccess = (message) => {
+    const { messageManager } = this.props;
+    messageManager.showSuccessMessage('Succès: ' + message, {
+      displayTime: 5000, //defaults to 2000
+    });
+  };
   render() {
-
     return (
       <div className="sale-component">
         <article className="sale-left-section">
@@ -20,6 +38,11 @@ class ArticleDetailled extends Component {
         </article>
         <div className="sale-mid-section"></div>
         <aside className="sale-right-section">
+          { 
+            this.props.cip === localStorage.getItem('cip') 
+            ? <button onClick={this.handleDelete} className="sale-contact-button">Supprimer l'annonce</button>
+            : <div/>
+          }
           <span className="sale-price">{this.props.price} $</span>
           <span className="sale-nego">{this.props.nego ? "négociable" : "fixe"}</span>
           <br />
@@ -43,6 +66,7 @@ class ArticleDetailled extends Component {
 }
 
 ArticleDetailled.propTypes = {
+  id: PropTypes.number,
   title : PropTypes.string,
   description : PropTypes.string,
   location : PropTypes.string,
@@ -61,4 +85,4 @@ ArticleDetailled.propTypes = {
   phone: PropTypes.string
 };
 
-export default ArticleDetailled;
+export default  injectMessageManager(ArticleDetailled);

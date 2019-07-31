@@ -9,6 +9,7 @@ import MyProfile from './containers/MyProfile';
 import AddArticle from './containers/AddArticle';
 import Login from './containers/Login';
 
+// eslint-disable-next-line react/prop-types
 function PrivateRoute({ component: Component, ...rest }) {
   return (
     <Route
@@ -20,6 +21,7 @@ function PrivateRoute({ component: Component, ...rest }) {
           <Redirect
             to={{
               pathname: "/cas",
+              // eslint-disable-next-line react/prop-types
               state: { from: props.location }
             }}
           />
@@ -37,7 +39,8 @@ class App extends Component {
 				<SearchBar />
         <div className="App">
           <Switch>
-            <PrivateRoute exact path="/" component={Home} />
+            <PrivateRoute exact path="/" component={Home}/>
+            <PrivateRoute path="/Home/:idCategory/:filter?" component={Home} />
             <Route path="/login" component={Login} />
             <PrivateRoute path="/redirect" component={() => {
               return <Redirect to={'/login'} />

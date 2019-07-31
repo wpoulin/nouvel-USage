@@ -24,6 +24,7 @@ class ViewArticle extends Component {
 			if (article) {
 				console.log(article);
 				this.setState({ 
+					id: article.id,
 					title: article.title,
 					description: article.description,
 					location: article.location,
@@ -63,10 +64,10 @@ class ViewArticle extends Component {
 	}
 
   render () {
-
     return (
       <div className="ViewArticle">
-        <ArticleDetailled 
+        <ArticleDetailled
+					id={this.state.id}
 					title={this.state.title}
 					description={this.state.description}
 					location={this.state.location}

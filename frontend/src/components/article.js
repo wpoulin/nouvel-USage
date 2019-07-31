@@ -3,6 +3,9 @@ import PropTypes from "prop-types";
 import "../assets/article.css";
 
 class Article extends Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
       <div className="article">
