@@ -42,7 +42,7 @@ class SearchBar extends Component {
 							<input className="search-input" placeholder="Rechercher..." text={this.state.filter} onChange={this.handleFilterChanged} />
 						</div>
 						<div className="search-type-container">
-							<Select options={this.state.options} defaultValue={this.state.options[0]} value={this.state.category} onChange={this.handleCategoryChanged}/>
+							<Select options={this.state.options} defaultValue={this.state.options[0]} value={this.state.category} onChange={this.handleCategoryChanged} placeholder="Toutes les catégories"/>
 						</div>
 					</div>
 					<div className="search-button-container">
