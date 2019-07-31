@@ -37,7 +37,8 @@ class App extends Component {
 				<SearchBar />
         <div className="App">
           <Switch>
-            <PrivateRoute exact path="/" component={Home} />
+            <PrivateRoute exact path="/" component={Home}/>
+            <PrivateRoute path="/Home/:idCategory/:filter?" component={Home} />
             <Route path="/login" component={Login} />
             <PrivateRoute path="/redirect" component={() => {
               return <Redirect to={'/login'} />

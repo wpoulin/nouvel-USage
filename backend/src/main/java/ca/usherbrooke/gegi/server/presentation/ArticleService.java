@@ -23,8 +23,13 @@ public class ArticleService {
     @GET
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Article> getArticlesFiltered(@QueryParam("filter") String filter) {
-        return articleMapper.GetArticlesFiltered(filter);
+    public List<Article> getArticlesFiltered(@QueryParam("idCategory") Integer idCategory, @QueryParam("filter") String filter) {
+
+        if (idCategory == null) idCategory = 0;
+        if (filter == null) filter = "";
+
+        System.out.println("Filter: " + idCategory + "," + filter);
+        return articleMapper.GetArticlesFiltered(idCategory, filter);
     }
 
     @GET

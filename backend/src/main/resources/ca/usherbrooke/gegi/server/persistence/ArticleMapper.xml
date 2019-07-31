@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="ca.usherbrooke.gegi.server.persistence.ArticleMapper">
 
-    <select id="GetArticlesFiltered" parameterType="String" resultType="Article">
+    <select id="GetArticlesFiltered" resultType="Article">
         SELECT
             id_article,
             id_category,
@@ -20,6 +20,10 @@
             image_src
         FROM
             articles
+        WHERE
+            (#{id_category} = 0 OR id_category = #{id_category})
+        AND
+            (LOWER(title) LIKE '%' || LOWER(#{filter}) || '%' OR LOWER(description) LIKE '%' || LOWER(#{filter}) || '%')
     </select>
 
     <select id="GetArticleById" parameterType='int' resultType="Article">

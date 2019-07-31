@@ -14,6 +14,43 @@ class Home extends Component {
 		};
 	}
 
+	componentDidUpdate(prevProps) {
+		if (prevProps.location.key !== this.props.location.key) {
+			this.getArticlesFiltered();
+		}
+	}
+
+	componentDidMount() {
+		this.getArticlesFiltered();
+	}
+
+	getArticlesFiltered() {
+		const { params } = this.props.match;
+
+		let idCategory = params.idCategory;
+		let filter = params.filter;
+
+		if (!idCategory) idCategory = 0;
+		if (!filter) filter = "";
+
+		const url = 'http://localhost:8080/backend/api/article/list?idCategory=' + idCategory + '&filter=' + filter;
+		axios.get(url).then(response => response.data)
+		.then((data) => {
+			let articleList = data;
+	
+			if (articleList) {
+				console.log(articleList);
+				this.setState({ 
+					articles: articleList,
+					loading: false
+				});
+			}
+		})
+		.catch(function(error) {
+			console.log(error);
+		});
+	}
+
 	render () {
 		return (
 			<div className="home">
@@ -32,25 +69,6 @@ class Home extends Component {
 				</div>
 			</div>
 		); 
-	}
-
-	componentDidMount() {
-		const url = 'http://localhost:8080/backend/api/article/list';
-		axios.get(url).then(response => response.data)
-		.then((data) => {
-			let articleList = data;
-	
-			if (articleList) {
-				console.log(articleList);
-				this.setState({ 
-					articles: articleList,
-					loading: false
-				});
-			}
-		})
-		.catch(function(error) {
-			console.log(error);
-		});
 	}
 }
 
