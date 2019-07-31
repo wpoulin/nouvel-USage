@@ -33,7 +33,7 @@ class MyProfile extends Component {
 		);
 	}
 	componentDidMount() {
-		let cip = 'test1234';
+		let cip = localStorage.getItem('cip');
 		const url = 'http://localhost:8080/backend/api/user';
 		axios.get(url + '?cip=' + cip).then(response => response.data)
 		.then((data) => {

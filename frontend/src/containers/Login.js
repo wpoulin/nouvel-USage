@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import LoginComponent from "../components/loginComponent";
 import CAS from '@noveogroup/cas';
-import Axios from "axios";
+import axios from "axios";
 import { withRouter } from "react-router";
 
 var cas = new CAS({
@@ -22,7 +22,7 @@ class Login extends Component {
 		}
 		else if (ticket) {
 			let url = `https://cas.usherbrooke.ca/serviceValidate?service=http://localhost:3000/login&ticket=${ticket}`
-			Axios.get(url).then(response => response.data)
+			axios.get(url).then(response => response.data)
 			.then((data) => {
 				let parser = new DOMParser()
 				let xmlDoc = parser.parseFromString(data,'text/xml')
@@ -34,11 +34,40 @@ class Login extends Component {
 					localStorage.setItem('cip', xmlDoc.getElementsByTagName('cas:cip')[0].childNodes[0].textContent)
 					localStorage.setItem('isAuthenticated', true)
 
-					this.props.history.push('/')
-
 				} else {
 					window.location.href = '/cas'; 
 				}
+			}).then(() => {
+				let needCreate = false
+				const url = 'http://localhost:8080/backend/api/user';
+				axios.get(url + '?cip=' + localStorage.getItem('cip')).then(response => response.data)
+				.then((data) => {
+					let user_info = data
+					if (user_info) {
+						if (!user_info.email) {
+							needCreate = true
+						}
+					}
+				}).then(() => {
+					if (needCreate) {
+						let user = {
+							cip: localStorage.getItem('cip'),
+							firstName: localStorage.getItem('firstname'),
+							lastName: localStorage.getItem('lastname'),
+							username: localStorage.getItem('fullname'),
+							email: localStorage.getItem('email'),
+							phone: '',
+							city : ''
+						}
+						const url = 'http://localhost:8080/backend/api/user';
+						axios.put(url, user).then(response => response.data)
+							.then((data) => {
+								// eslint-disable-next-line no-console
+								//console.log(data)
+							});
+					}
+					this.props.history.push('/')
+				})
 			});
 		} else {
 			window.location.href = '/cas'; 
