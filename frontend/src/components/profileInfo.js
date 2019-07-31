@@ -38,16 +38,16 @@ class ProfileInfo extends Component {
             <article>
                 <form>
                   <label className="profile-label">CIP</label>
-                  <input className="profile-input" type="text" value={this.state.cip} onChange={e => this.setState({ cip: e.target.value })}></input>
+                  <label className="profile-input">{this.state.cip}</label>
                   <label className="profile-label">Prénom</label>
                   <input className="profile-input" type="text" value={this.state.firstName} onChange={e => this.setState({ firstName: e.target.value })}></input>
                   <label className="profile-label">Nom</label>
                   <input className="profile-input" type="text" value={this.state.lastName} onChange={e => this.setState({ lastName: e.target.value })}></input>
-                  <label className="profile-label">Nom d'utilisateur</label>
+                  <label className="profile-label">Nom d'utilisateur*</label>
                   <input className="profile-input" type="text" value={this.state.username} onChange={e => this.setState({ username: e.target.value })}></input>
-                  <label className="profile-label">Courriel</label>
+                  <label className="profile-label">Courriel*</label>
                   <input className="profile-input" type="text" value={this.state.email} onChange={e => this.setState({ email: e.target.value })}></input>
-                  <label className="profile-label">Téléphone</label>
+                  <label className="profile-label">Téléphone*</label>
                   <input className="profile-input" type="text" value={this.state.tel} onChange={e => this.setState({tel: e.target.value })}></input>
                   <label className="profile-label">Ville</label>
                   <input className="profile-input" type="text" value={this.state.city} onChange={e => this.setState({ city: e.target.value })}></input>

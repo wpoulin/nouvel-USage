@@ -45,7 +45,7 @@ class NewArticleInfo extends Component {
         { value: true, label: 'Négociable' }
       ],
       idCategory : 0,
-      cip : "test1234",
+      cip : localStorage.getItem('cip'),
       title : "",
       description : "",
       price : 0,
@@ -155,21 +155,21 @@ class NewArticleInfo extends Component {
           <LoadingOverlay active={this.state.isActive} spinner text='Téléversement du contenu...'>
             <article>
                 <form>
-                  <label className="newSale-label">Titre</label>
+                  <label className="newSale-label">Titre*</label>
                   <input className="newSale-input" onChange={e => this.setState({ title: e.target.value })}></input>
-                  <label className="newSale-label">Description</label>
+                  <label className="newSale-label">Description*</label>
                   <input className="newSale-input" onChange={e => this.setState({ description: e.target.value })}></input>
-                  <label className="newSale-label">Prix</label>
+                  <label className="newSale-label">Prix*</label>
                   <input className="newSale-input" onChange={e => this.setState({ price: e.target.value })}></input>
                   <label className="newSale-label"></label>
                   <Select options={this.state.negoOptions} onChange={this.handleChangeNego} value={this.state.nego} placeholder="Sélectionner..."/>
                   <label className="newSale-label">Type</label>
                   <Select options={this.state.categories} onChange={this.handleChangeCategory} value={this.state.idCategory} placeholder="Sélectionner..."/>
-                  <label className="newSale-label">Condition</label>
+                  <label className="newSale-label">Condition*</label>
                   <Select options={this.state.options} onChange={this.handleChangeCondition} value={this.state.wear} placeholder="Sélectionner..."/>
                   <label className="newSale-label">Tags</label>
                   <Select value={this.state.tags} onChange={this.handleChangeTag} options={this.state.tag_options} isMulti={true} placeholder="Sélectionner..."/>
-                  <label className="newSale-label">Image</label>
+                  <label className="newSale-label">Image*</label>
                   <FileBase64 multiple={ false } onDone={ this.getFiles.bind(this) }/>
                   <button className="newSale-apply-button" onClick={this.handleClick}>Créer l'annonce</button>
                 </form>
