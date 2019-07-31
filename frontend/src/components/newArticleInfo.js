@@ -80,7 +80,7 @@ class NewArticleInfo extends Component {
   }
 
   validateFields = () => {
-    let completed = this.state.title && this.state.description && this.state.price && this.state.wear
+    let completed = this.state.title && this.state.description && this.state.price && this.state.wear && this.state.nego && this.state.categories
     return(completed)
   }
 
@@ -163,7 +163,7 @@ class NewArticleInfo extends Component {
                   <input className="newSale-input" onChange={e => this.setState({ price: e.target.value })}></input>
                   <label className="newSale-label"></label>
                   <Select options={this.state.negoOptions} onChange={this.handleChangeNego} value={this.state.nego} placeholder="Sélectionner..."/>
-                  <label className="newSale-label">Type</label>
+                  <label className="newSale-label">Type*</label>
                   <Select options={this.state.categories} onChange={this.handleChangeCategory} value={this.state.idCategory} placeholder="Sélectionner..."/>
                   <label className="newSale-label">Condition*</label>
                   <Select options={this.state.options} onChange={this.handleChangeCondition} value={this.state.wear} placeholder="Sélectionner..."/>
